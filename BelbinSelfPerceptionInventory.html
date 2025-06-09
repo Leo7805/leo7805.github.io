@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Belbin Self-Perception Inventory</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 20px;
+      }
+      .container {
+        max-width: 800px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      .highlight {
+        background-color: #ffc7ce; /* Light Red Fill */
+        color: #9c0006; /* Dark Red Text */
+        font-weight: bold;
+        padding: 4px;
+        border-radius: 4px;
+      }
+
+      h2,
+      h3 {
+        color: #333;
+      }
+      p {
+        font-size: 16px;
+      }
+      .section {
+        padding: 15px 0;
+        border-bottom: 1px solid #ddd;
+      }
+      .form-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      .form-item input {
+        width: 60px;
+        margin-right: 15px;
+        padding: 5px;
+        text-align: center;
+        font-size: 16px;
+      }
+      .label-text {
+        flex: 1;
+        font-size: 16px;
+      }
+      button {
+        margin-top: 20px;
+        background-color: #007bff;
+        color: white;
+        padding: 10px 15px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      .error {
+        color: red;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+      .totalScore {
+        font-weight: bold;
+        margin-top: 10px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+      }
+      th {
+        background-color: #007bff;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Belbin Self-Perception Inventory</h2>
+      <p>
+        Assign a value (1-10) for each statement. The total must add up to 10
+        for each section.
+      </p>
+
+      <form id="belbinForm">
+        <!-- SECTION 1 -->
+        <div class="section">
+          <h3>SECTION 1: WHAT I BELIEVE I CAN CONTRIBUTE TO A TEAM</h3>
+          <div class="form-item">
+            <input
+              type="number"
+              name="section1"
+              min="1"
+              max="10"
+              onchange="updateTable(1)"
+            />
+            <span class="label-text"
+              >(a) I think I can quickly see and take advantage of new
+              opportunities.</span
+            >
+          </div>
+          <div class="form-item">
+            <input
+              type="number"
+              name="section1"
+              min="1"
+              max="10"
+              onchange="updateTable(1)"
+            />
+            <span class="label-text"
+              >(b) I can work well with a wide range of people.</span
+            >
+          </div>
+          <div class="form-item">
+            <input
+              type="number"
+              name="section1"
+              min="1"
+              max="10"
+              onchange="updateTable(1)"
+            />
+            <span class="label-text"
+              >(c) Producing ideas is one of my natural assets.</span
+            >
+          </div>
+          <div class="form-item">
+            <input
+              type="number"
+              name="section1"
+              min="1"
+              max="10"
+              onchange="updateTable(1)"
+            />
+            <span class="label-text"
+              >(d) My ability rests in being able to draw people out whenever I
+              detect they have something of value to contribute to group
+              objectives.</span
+            >
+          </div>
+          <div class="form-item">
+            <input
+              type="number"
+              name="section1"
+              min="1"
+              max="10"
+              onchange="updateTable(1)"
+            />
+            <span class="label-text"
+              >(e) My capacity to follow through has much to do with my personal
+              effectiveness.</span
+            >
+          </div>
+          <div class="form-item">
+            <input
+              type="number"
+              name="section1"
+              min="1"
+              max="10"
+              onchange="updateTable(1)"
+            />
+            <span class="label-text"
+              >(f) I am ready to face temporary unpopularity if it leads to
+              worthwhile results in the end.</span
+            >
+          </div>
+          <div class="form-item">
+            <input
+              type="number"
+              name="section1"
+              min="1"
+              max="10"
+              onchange="updateTable(1)"
+            />
+            <span class="label-text"
+              >(g) I can usually sense what is realistic and likely to
+              work.</span
+            >
+          </div>
+          <div class="form-item">
+            <input
+              type="number"
+              name="section1"
+              min="1"
+              max="10"
+              onchange="updateTable(1)"
+            />
+            <span class="label-text"
+              >(h) I can offer a reasoned case for alternative courses of action
+              without introducing bias or prejudice.</span
+            >
+          </div>
+        </div>
+
+        <!-- SECTION 2 -->
+        <div class="section">
+          <h3>
+            SECTION 2: IF I HAVE A POSSIBLE SHORTCOMING IN TEAMWORK IT COULD BE
+            THAT
+          </h3>
+          <div class="form-item">
+            <input
+              type="number"
+              name="section2"
+              min="1"
+              max="10"
+              onchange="updateTable(2)"
+            />
+            <span class="label-text"
+              >(a) I am not at ease unless meetings are well structured and
+              controlled and generally well conducted.</span
+            >
+          </div>
+          <div class="form-item">
+            <input
+              type="number"
+              name="section2"
+              min="1"
+              max="10"
+              onchange="updateTable(2)"
+            />
+            <span class="label-text"
+              >(b) I am inclined to be too generous towards others who have a
+              valid viewpoint that has not been given a proper airing.</span
+            >
+          </div>
+          <div class="form-item">
+            <input
+              type="number"
+              name="section2"
+              min="1"
+              max="10"
+              onchange="updateTable(2)"
+            />
+            <span class="label-text"
+              >(c) I have a tendency to talk too much once the group gets onto
+              new ideas.</span
+            >
+          </div>
+          <div class="form-item">
+            <input
+              type="number"
+              name="section2"
+              min="1"
+              max="10"
+              onchange="updateTable(2)"
+            />
+            <span class="label-text"
+              >(d) My objective outlook makes it difficult for me to join in
+              readily and enthusiastically with colleagues.</span
+            >
+          </div>
+          <div class="form-item">
+            <input
+              type="number"
+              name="section2"
+              min="1"
+              max="10"
+              onchange="updateTable(2)"
+            />
+            <span class="label-text"
+              >(e) I am sometimes seen as forceful and authoritarian if there is
+              a need to get something done.</span
+            >
+          </div>
+          <div class="form-item">
+            <input
+              type="number"
+              name="section2"
+              min="1"
+              max="10"
+              onchange="updateTable(2)"
+            />
+            <span class="label-text"
+              >(f) I find it difficult to lead from the front, perhaps because I
+              am over-responsive to group atmosphere.</span
+            >
+          </div>
+          <div class="form-item">
+            <input
+              type="number"
+              name="section2"
+              min="1"
+              max="10"
+              onchange="updateTable(2)"
+            />
+            <span class="label-text"
+              >(g) I am apt to get too caught up in ideas that occur to me and
+              so lose track of what is happening.</span
+            >
+          </div>
+          <div class="form-item">
+            <input
+              type="number"
+              name="section2"
+              min="1"
+              max="10"
+              onchange="updateTable(2)"
+            />
+            <span class="label-text"
+              >(h) I can offer a reasoned case for alternative courses of action
+              without bias or prejudice.</span
+            >
+          </div>
+        </div>
+
+        <!-- SECTION 3 -->
+        <div class="section">
+          <h3>SECTION 3: WHEN INVOLVED IN A PROJECT WITH OTHER PEOPLE</h3>
+          <div class="form-item">
+            <input
+              type="number"
+              name="section3"
+              min="1"
+              max="10"
+              onchange="updateTable(3)"
+            />
+            <span class="label-text"
+              >(a) I have an aptitude for influencing people without
+              pressurising them.</span
+            >
+          </div>
+          <div class="form-item">
+            <input
+              type="number"
+              name="section3"
+              min="1"
+              max="10"
+              onchange="updateTable(3)"
+            />
+            <span class="label-text"
+              >(b) My general vigilance prevents careless mistakes and omissions
+              being made.</span
+            >
+          </div>
+          <div class="form-item">
+            <input
+              type="number"
+              name="section3"
+              min="1"
+              max="10"
+              onchange="updateTable(3)"
+            />
+            <span class="label-text"
+              >(c) I am ready to press for action to make sure that the meeting
+              does not waste time or lose sight of the main objective.</span
+            >
+          </div>
+          <div class="form-item">
+            <input
+              type="number"
+              name="section3"
+              min="1"
+              max="10"
+              onchange="updateTable(3)"
+            />
+            <span class="label-text"
+              >(d) I can be counted on to contribute something original.</span
+            >
+          </div>
+          <div class="form-item">
+            <input
+              type="number"
+              name="section3"
+              min="1"
+              max="10"
+              onchange="updateTable(3)"
+            />
+            <span class="label-text"
+              >(e) I am always ready to back a good suggestion in the common
+              interest.</span
+            >
+          </div>
+          <div class="form-item">
+            <input
+              type="number"
+              name="section3"
+              min="1"
+              max="10"
+              onchange="updateTable(3)"
+            />
+            <span class="label-text"
+              >(f) I am keen to look for the latest new ideas and
+              developments.</span
+            >
+          </div>
+          <div class="form-item">
+            <input
+              type="number"
+              name="section3"
+              min="1"
+              max="10"
+              onchange="updateTable(3)"
+            />
+            <span class="label-text"
+              >(g) I believe my capacity for judgement can help to bring about
+              the right decisions.</span
+            >
+          </div>
+          <div class="form-item">
+            <input
+              type="number"
+              name="section3"
+              min="1"
+              max="10"
+              onchange="updateTable(3)"
+            />
+            <span class="label-text"
+              >(h) I can be relied upon to see that all essential work is
+              organised.</span
+            >
+          </div>
+        </div>
+
+        <!-- SECTION 4 -->
+        <div class="section">
+          <h3>SECTION 4: MY CHARACTERISTIC APPROACH TO GROUP WORK IS</h3>
+          <div class="form-item">
+            <input
+              type="number"
+              name="section4"
+              min="1"
+              max="10"
+              onchange="updateTable(4)"
+            />
+            <span class="label-text"
+              >(a) I have a quiet interest in getting to know colleagues
+              better.</span
+            >
+          </div>
+          <div class="form-item">
+            <input
+              type="number"
+              name="section4"
+              min="1"
+              max="10"
+              onchange="updateTable(4)"
+            />
+            <span class="label-text"
+              >(b) I am not reluctant to challenge the views of others or to
+              hold a minority view.</span
+            >
+          </div>
+          <div class="form-item">
+            <input
+              type="number"
+              name="section4"
+              min="1"
+              max="10"
+              onchange="updateTable(4)"
+            />
+            <span class="label-text"
+              >(c) I can usually find a line of argument to refute unsound
+              propositions.</span
+            >
+          </div>
+          <div class="form-item">
+            <input
+              type="number"
+              name="section4"
+              min="1"
+              max="10"
+              onchange="updateTable(4)"
+            />
+            <span class="label-text"
+              >(d) I think I have a talent for making things work once a plan
+              has to be put into operation.</span
+            >
+          </div>
+          <div class="form-item">
+            <input
+              type="number"
+              name="section4"
+              min="1"
+              max="10"
+              onchange="updateTable(4)"
+            />
+            <span class="label-text"
+              >(e) I have a tendency to avoid the obvious and to come out with
+              the unexpected.</span
+            >
+          </div>
+          <div class="form-item">
+            <input
+              type="number"
+              name="section4"
+              min="1"
+              max="10"
+              onchange="updateTable(4)"
+            />
+            <span class="label-text"
+              >(f) I bring a touch of perfectionism to any job I
+              undertake.</span
+            >
+          </div>
+          <div class="form-item">
+            <input
+              type="number"
+              name="section4"
+              min="1"
+              max="10"
+              onchange="updateTable(4)"
+            />
+            <span class="label-text"
+              >(g) I am ready to make use of contacts outside the group
+              itself.</span
+            >
+          </div>
+          <div class="form-item">
+            <input
+              type="number"
+              name="section4"
+              min="1"
+              max="10"
+              onchange="updateTable(4)"
+            />
+            <span class="label-text"
+              >(h) While I am interested in all views I have no hesitation in
+              making up my mind once a decision has to be made.</span
+            >
+          </div>
+
+          <!-- SECTION 5 -->
+          <div class="section">
+            <h3>SECTION 5: I GAIN SATISFACTION IN A JOB BECAUSE</h3>
+            <div class="form-item">
+              <input
+                type="number"
+                name="section5"
+                min="1"
+                max="10"
+                onchange="updateTable(5)"
+              />
+              <span class="label-text"
+                >(a) I enjoy analysing situations and weighing up all the
+                possible choices.</span
+              >
+            </div>
+            <div class="form-item">
+              <input
+                type="number"
+                name="section5"
+                min="1"
+                max="10"
+                onchange="updateTable(5)"
+              />
+              <span class="label-text"
+                >(b) I am interested in finding practical solutions to
+                problems.</span
+              >
+            </div>
+            <div class="form-item">
+              <input
+                type="number"
+                name="section5"
+                min="1"
+                max="10"
+                onchange="updateTable(5)"
+              />
+              <span class="label-text"
+                >(c) I like to feel I am fostering good working
+                relationships.</span
+              >
+            </div>
+            <div class="form-item">
+              <input
+                type="number"
+                name="section5"
+                min="1"
+                max="10"
+                onchange="updateTable(5)"
+              />
+              <span class="label-text"
+                >(d) I can have a strong influence on decisions.</span
+              >
+            </div>
+            <div class="form-item">
+              <input
+                type="number"
+                name="section5"
+                min="1"
+                max="10"
+                onchange="updateTable(5)"
+              />
+              <span class="label-text"
+                >(e) I can meet people who may have something new to
+                offer.</span
+              >
+            </div>
+            <div class="form-item">
+              <input
+                type="number"
+                name="section5"
+                min="1"
+                max="10"
+                onchange="updateTable(5)"
+              />
+              <span class="label-text"
+                >(f) I can get people to agree on a necessary course of
+                action.</span
+              >
+            </div>
+            <div class="form-item">
+              <input
+                type="number"
+                name="section5"
+                min="1"
+                max="10"
+                onchange="updateTable(5)"
+              />
+              <span class="label-text"
+                >(g) I feel in my element when I can give a task my full
+                attention.</span
+              >
+            </div>
+            <div class="form-item">
+              <input
+                type="number"
+                name="section5"
+                min="1"
+                max="10"
+                onchange="updateTable(5)"
+              />
+              <span class="label-text"
+                >(h) I like to find a field that stretches my imagination.</span
+              >
+            </div>
+          </div>
+
+          <!-- SECTION 6 -->
+          <div class="section">
+            <h3>
+              SECTION 6: IF I AM SUDDENLY GIVEN A DIFFICULT TASK WITH LIMITED
+              TIME AND UNFAMILIAR PEOPLE
+            </h3>
+            <div class="form-item">
+              <input
+                type="number"
+                name="section6"
+                min="1"
+                max="10"
+                onchange="updateTable(6)"
+              />
+              <span class="label-text"
+                >(a) I would feel like retiring to a corner to devise a way out
+                of the impasse before developing a line.</span
+              >
+            </div>
+            <div class="form-item">
+              <input
+                type="number"
+                name="section6"
+                min="1"
+                max="10"
+                onchange="updateTable(6)"
+              />
+              <span class="label-text"
+                >(b) I would be ready to work with the person who showed the
+                most positive approach.</span
+              >
+            </div>
+            <div class="form-item">
+              <input
+                type="number"
+                name="section6"
+                min="1"
+                max="10"
+                onchange="updateTable(6)"
+              />
+              <span class="label-text"
+                >(c) I would find some way of reducing the size of the task by
+                establishing what different individuals might best
+                contribute.</span
+              >
+            </div>
+            <div class="form-item">
+              <input
+                type="number"
+                name="section6"
+                min="1"
+                max="10"
+                onchange="updateTable(6)"
+              />
+              <span class="label-text"
+                >(d) My natural sense of urgency would ensure that we did not
+                fall behind schedule.</span
+              >
+            </div>
+            <div class="form-item">
+              <input
+                type="number"
+                name="section6"
+                min="1"
+                max="10"
+                onchange="updateTable(6)"
+              />
+              <span class="label-text"
+                >(e) I believe I would keep cool and maintain my capacity to
+                think straight.</span
+              >
+            </div>
+            <div class="form-item">
+              <input
+                type="number"
+                name="section6"
+                min="1"
+                max="10"
+                onchange="updateTable(6)"
+              />
+              <span class="label-text"
+                >(f) I would maintain a steadiness of purpose in spite of the
+                pressures.</span
+              >
+            </div>
+            <div class="form-item">
+              <input
+                type="number"
+                name="section6"
+                min="1"
+                max="10"
+                onchange="updateTable(6)"
+              />
+              <span class="label-text"
+                >(g) I would be prepared to take a positive lead if I felt the
+                group was making no progress.</span
+              >
+            </div>
+            <div class="form-item">
+              <input
+                type="number"
+                name="section6"
+                min="1"
+                max="10"
+                onchange="updateTable(6)"
+              />
+              <span class="label-text"
+                >(h) I would open up discussions with a view to stimulating new
+                thoughts and getting something moving.</span
+              >
+            </div>
+          </div>
+
+          <!-- SECTION 7 -->
+          <div class="section">
+            <h3>
+              SECTION 7: WITH REFERENCE TO PROBLEMS TO WHICH I AM SUBJECT IN
+              GROUPS
+            </h3>
+            <div class="form-item">
+              <input
+                type="number"
+                name="section7"
+                min="1"
+                max="10"
+                onchange="updateTable(7)"
+              />
+              <span class="label-text"
+                >(a) I am apt to show my impatience with those who are
+                obstructing progress.</span
+              >
+            </div>
+            <div class="form-item">
+              <input
+                type="number"
+                name="section7"
+                min="1"
+                max="10"
+                onchange="updateTable(7)"
+              />
+              <span class="label-text"
+                >(b) Others may criticise me for being too analytical and
+                insufficiently intuitive.</span
+              >
+            </div>
+            <div class="form-item">
+              <input
+                type="number"
+                name="section7"
+                min="1"
+                max="10"
+                onchange="updateTable(7)"
+              />
+              <span class="label-text"
+                >(c) My desire to ensure that work is properly done can hold up
+                proceedings.</span
+              >
+            </div>
+            <div class="form-item">
+              <input
+                type="number"
+                name="section7"
+                min="1"
+                max="10"
+                onchange="updateTable(7)"
+              />
+              <span class="label-text"
+                >(d) I tend to get bored rather easily and rely on one or two
+                stimulating members to spark me off.</span
+              >
+            </div>
+            <div class="form-item">
+              <input
+                type="number"
+                name="section7"
+                min="1"
+                max="10"
+                onchange="updateTable(7)"
+              />
+              <span class="label-text"
+                >(e) I find it difficult to get started unless the goals are
+                clear.</span
+              >
+            </div>
+            <div class="form-item">
+              <input
+                type="number"
+                name="section7"
+                min="1"
+                max="10"
+                onchange="updateTable(7)"
+              />
+              <span class="label-text"
+                >(f) I am sometimes poor at explaining and clarifying complex
+                points that occur to me.</span
+              >
+            </div>
+            <div class="form-item">
+              <input
+                type="number"
+                name="section7"
+                min="1"
+                max="10"
+                onchange="updateTable(7)"
+              />
+              <span class="label-text"
+                >(g) I am conscious of demanding from others things I cannot do
+                myself.</span
+              >
+            </div>
+            <div class="form-item">
+              <input
+                type="number"
+                name="section7"
+                min="1"
+                max="10"
+                onchange="updateTable(7)"
+              />
+              <span class="label-text"
+                >(h) I hesitate to get my points across when I run up against
+                real opposition.</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic Score Table -->
+        <table>
+          <thead>
+            <tr>
+              <th>Section</th>
+              <th>(a)</th>
+              <th>(b)</th>
+              <th>(c)</th>
+              <th>(d)</th>
+              <th>(e)</th>
+              <th>(f)</th>
+              <th>(g)</th>
+              <th>(h)</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody id="scoreTable">
+            <tr id="row1">
+              <td>Section 1</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr id="row2">
+              <td>Section 2</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr id="row3">
+              <td>Section 3</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr id="row4">
+              <td>Section 4</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr id="row5">
+              <td>Section 5</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr id="row6">
+              <td>Section 6</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr id="row7">
+              <td>Section 7</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table>
+          <thead>
+            <tr>
+              <th>SECTION</th>
+              <th></th>
+              <th>CW</th>
+              <th></th>
+              <th>CH</th>
+              <th></th>
+              <th>SH</th>
+              <th></th>
+              <th>PL</th>
+              <th></th>
+              <th>RI</th>
+              <th></th>
+              <th>ME</th>
+              <th></th>
+              <th>TW</th>
+              <th></th>
+              <th>CF</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr id="row2_1">
+              <td>1</td>
+              <td>g</td>
+              <td></td>
+              <td>d</td>
+              <td></td>
+              <td>f</td>
+              <td></td>
+              <td>c</td>
+              <td></td>
+              <td>a</td>
+              <td></td>
+              <td>h</td>
+              <td></td>
+              <td>b</td>
+              <td></td>
+              <td>e</td>
+              <td></td>
+            </tr>
+            <tr id="row2_2">
+              <td>2</td>
+              <td>a</td>
+              <td></td>
+              <td>b</td>
+              <td></td>
+              <td>e</td>
+              <td></td>
+              <td>g</td>
+              <td></td>
+              <td>c</td>
+              <td></td>
+              <td>d</td>
+              <td></td>
+              <td>f</td>
+              <td></td>
+              <td>h</td>
+              <td></td>
+            </tr>
+            <tr id="row2_3">
+              <td>3</td>
+              <td>h</td>
+              <td></td>
+              <td>a</td>
+              <td></td>
+              <td>c</td>
+              <td></td>
+              <td>d</td>
+              <td></td>
+              <td>f</td>
+              <td></td>
+              <td>g</td>
+              <td></td>
+              <td>e</td>
+              <td></td>
+              <td>b</td>
+              <td></td>
+            </tr>
+            <tr id="row2_4">
+              <td>4</td>
+              <td>d</td>
+              <td></td>
+              <td>h</td>
+              <td></td>
+              <td>b</td>
+              <td></td>
+              <td>e</td>
+              <td></td>
+              <td>g</td>
+              <td></td>
+              <td>c</td>
+              <td></td>
+              <td>a</td>
+              <td></td>
+              <td>f</td>
+              <td></td>
+            </tr>
+            <tr id="row2_5">
+              <td>5</td>
+              <td>b</td>
+              <td></td>
+              <td>f</td>
+              <td></td>
+              <td>d</td>
+              <td></td>
+              <td>h</td>
+              <td></td>
+              <td>e</td>
+              <td></td>
+              <td>a</td>
+              <td></td>
+              <td>c</td>
+              <td></td>
+              <td>g</td>
+              <td></td>
+            </tr>
+            <tr id="row2_6">
+              <td>6</td>
+              <td>f</td>
+              <td></td>
+              <td>c</td>
+              <td></td>
+              <td>g</td>
+              <td></td>
+              <td>a</td>
+              <td></td>
+              <td>h</td>
+              <td></td>
+              <td>e</td>
+              <td></td>
+              <td>b</td>
+              <td></td>
+              <td>d</td>
+              <td></td>
+            </tr>
+            <tr id="row2_7">
+              <td>7</td>
+              <td>e</td>
+              <td></td>
+              <td>g</td>
+              <td></td>
+              <td>a</td>
+              <td></td>
+              <td>f</td>
+              <td></td>
+              <td>d</td>
+              <td></td>
+              <td>b</td>
+              <td></td>
+              <td>h</td>
+              <td></td>
+              <td>c</td>
+              <td></td>
+            </tr>
+            <tr id="total2">
+              <td>TOTAL</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+        <p id="errorMessage" class="error"></p>
+
+        <button type="button" onclick="validateForm()">Check</button>
+      </form>
+    </div>
+
+    <table height="900"></table>
+    <script>
+      let matrix = [
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0],
+      ]
+
+      function updateTable(section) {
+        let total = 0
+        let row = document.getElementById(`row${section}`)
+        let cells = row.getElementsByTagName('td')
+        const inputs = document.querySelectorAll(
+          `input[name="section${section}"]`
+        )
+
+        inputs.forEach((input, index) => {
+          let value = input.value ? parseInt(input.value, 10) : 0
+          cells[index + 1].textContent = value
+          total += value
+        })
+
+        cells[cells.length - 1].textContent = total
+
+        for (let i = 1; i <= 9; ++i) {
+          if (cells[i].textContent.trim() === '0') {
+            cells[i].textContent = ''
+          }
+        }
+        updateTable2(section)
+      }
+
+      function updateTable2(section) {
+        let total = 0
+        let row = document.getElementById(`row2_${section}`)
+        let cells = row.getElementsByTagName('td')
+        let total_row = document.getElementById('total2')
+        let total_cells = total_row.getElementsByTagName('td')
+        const inputs = document.querySelectorAll(
+          `input[name="section${section}"]`
+        )
+
+        inputs.forEach((input, index) => {
+          let value = input.value ? parseInt(input.value, 10) : 0
+          //   console.log(section)
+          for (let i = 2; i <= 16; i += 2) {
+            cur_idx = cells[i - 1].textContent.charCodeAt() - 'a'.charCodeAt()
+            if (cur_idx != index) {
+              continue
+            }
+            matrix[section - 1][i] = value
+            // console.log(matrix[section - 1][i])
+
+            if (total_cells[i].textContent.trim() === '') {
+              total_cells[i].textContent = 0
+            }
+            cells[i].textContent = value
+            total = 0
+            for (let j = 0; j < matrix.length; ++j) {
+              if (matrix[j][i]) {
+                total += matrix[j][i]
+              }
+            }
+            total_cells[i].textContent = total
+          }
+        })
+
+        for (let i = 2; i <= 16; i += 2) {
+          if (cells[i].textContent.trim() === '0') {
+            cells[i].textContent = ''
+          }
+          if (total_cells[i].textContent.trim() === '0') {
+            total_cells[i].textContent = ''
+          }
+        }
+        // cells[cells.length - 1].textContent = total
+      }
+
+      function validateForm() {
+        let valid = true
+        let message = ''
+
+        for (let i = 1; i <= 2; i++) {
+          let total = 0
+          document
+            .querySelectorAll(`input[name="section${i}"]`)
+            .forEach((input) => {
+              if (input.value !== '') {
+                total += parseInt(input.value, 10)
+              }
+            })
+
+          message += `Section ${i} Total: ${total}<br>`
+          if (total !== 10) valid = false
+        }
+
+        // Highlight max value
+        let total_row = document.getElementById('total2')
+        let total_cells = total_row.getElementsByTagName('td')
+        let max = 0
+        for (let j = 2; j <= 16; j += 2) {
+          let value = total_cells[j].textContent.trim()
+            ? parseInt(total_cells[j].textContent.trim(), 10)
+            : 0
+          if (value >= max) {
+            max = value
+            max_idx = j
+          }
+        }
+        for (let m = 2; m <= 16; m += 2) {
+          let value = total_cells[m].textContent.trim()
+            ? parseInt(total_cells[m].textContent.trim(), 10)
+            : 0
+          if (max == value) {
+            total_cells[m].classList.add('highlight')
+          } else {
+            total_cells[m].classList.remove('highlight')
+          }
+        }
+        // console.log('max' + max)
+        // console.log('max_idx' + max_idx)
+        // total_cells[max_idx].classList.add('highlight')
+
+        document.getElementById('errorMessage').textContent = valid
+          ? '✅ Check successful! All sections total 10.'
+          : '❌ Each section must total 10. Please adjust your inputs.'
+      }
+    </script>
+  </body>
+</html>
