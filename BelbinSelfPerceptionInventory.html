@@ -1180,6 +1180,9 @@
         [0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0],
       ]
+      function isPositiveInteger(input) {
+        return /^[0-9]\d*$/.test(input)
+      }
 
       function updateTable(section) {
         let total = 0
@@ -1190,14 +1193,24 @@
         )
 
         inputs.forEach((input, index) => {
-          let value = input.value ? parseInt(input.value, 10) : 0
-          if (value < 0) {
-            value = 0
+          console.log('11111111')
+          let value = -1
+          if (isPositiveInteger(input.value)) {
+            value = input.value ? parseInt(input.value, 10) : 0
+          } else {
+            inputs[index].value = ''
           }
+
           if (value > 10) {
             value = 10
           }
-          inputs[index].value = value
+
+          if (value >= 0) {
+            inputs[index].value = value // remove the leading zeros
+          } else {
+            inputs[index].value = ''
+            value = 0
+          }
           cells[index + 1].textContent = value
           total += value
         })
