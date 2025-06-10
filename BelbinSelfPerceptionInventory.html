@@ -24,6 +24,14 @@
         font-weight: bold;
         padding: 4px;
         border-radius: 4px;
+        opacity: 0; /* Initially hidden */
+        animation: showHighlight 1s ease-in-out 0.2s forwards; /* Delay of 1s, then fades in over 2s */
+      }
+
+      @keyframes showHighlight {
+        to {
+          opacity: 1;
+        }
       }
 
       h2,
@@ -1157,7 +1165,7 @@
         </table>
         <p id="errorMessage" class="error"></p>
 
-        <button type="button" onclick="validateForm()">Check</button>
+        <button type="button" onclick="validateForm()">Confirm</button>
       </form>
     </div>
 
@@ -1183,6 +1191,14 @@
 
         inputs.forEach((input, index) => {
           let value = input.value ? parseInt(input.value, 10) : 0
+          if (value < 0) {
+            value = 0
+            inputs[index].value = value
+          }
+          if (value > 10) {
+            value = 10
+            inputs[index].value = value
+          }
           cells[index + 1].textContent = value
           total += value
         })
@@ -1241,6 +1257,7 @@
           }
         }
         // cells[cells.length - 1].textContent = total
+        validateForm()
       }
 
       function validateForm() {
@@ -1274,16 +1291,21 @@
             max_idx = j
           }
         }
-        for (let m = 2; m <= 16; m += 2) {
-          let value = total_cells[m].textContent.trim()
-            ? parseInt(total_cells[m].textContent.trim(), 10)
-            : 0
-          if (max == value) {
-            total_cells[m].classList.add('highlight')
-          } else {
+        if (max != 0) {
+          for (let m = 2; m <= 16; m += 2) {
+            let value = total_cells[m].textContent.trim()
+              ? parseInt(total_cells[m].textContent.trim(), 10)
+              : 0
             total_cells[m].classList.remove('highlight')
+            void total_cells[m].offsetWidth
+            if (max == value) {
+              total_cells[m].classList.add('highlight')
+            } else {
+              // total_cells[m].classList.remove('highlight')
+            }
           }
         }
+
         // console.log('max' + max)
         // console.log('max_idx' + max_idx)
         // total_cells[max_idx].classList.add('highlight')
