@@ -1193,12 +1193,11 @@
           let value = input.value ? parseInt(input.value, 10) : 0
           if (value < 0) {
             value = 0
-            inputs[index].value = value
           }
           if (value > 10) {
             value = 10
-            inputs[index].value = value
           }
+          inputs[index].value = value
           cells[index + 1].textContent = value
           total += value
         })
