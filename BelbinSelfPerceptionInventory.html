@@ -1254,6 +1254,7 @@
           }
           if (total_cells[i].textContent.trim() === '0') {
             total_cells[i].textContent = ''
+            total_cells[i].classList.remove('highlight')
           }
         }
         // cells[cells.length - 1].textContent = total
@@ -1304,6 +1305,8 @@
               // total_cells[m].classList.remove('highlight')
             }
           }
+        } else {
+          total_cells[m].classList.remove('highlight')
         }
 
         // console.log('max' + max)
