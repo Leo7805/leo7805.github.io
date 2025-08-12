@@ -1314,17 +1314,51 @@
                     const padding = Utils.getPadding();
                     // Detect pie charts (mermaid adds specific structure/classes)
                     const isPie = !!(svgElement.querySelector('[class*="pie"]') || svgElement.querySelector('[id*="pie"]') || /pie/i.test(svgElement.textContent.slice(0,200)));
+                    // Detect Gantt charts for trimming
+                    const isGantt = !!(svgElement.querySelector('[class*="section"]') || 
+                                      svgElement.querySelector('[class*="task"]') ||
+                                      svgElement.textContent.includes('gantt'));
 
                     let svgClone, totalWidth, totalHeight;
                     if (isPie) {
                         // Lightweight clone path to avoid prepareSVGForExport() forcing black text / stripping classes
                         const bbox = svgElement.getBBox();
-                        totalWidth = bbox.width + padding * 2;
-                        totalHeight = bbox.height + padding * 2;
+                        let adjustedBBox = bbox;
+                        
+                        // Apply Gantt trimming if needed
+                        if (isGantt) {
+                            const contentElements = svgElement.querySelectorAll('rect, text, path, line, circle');
+                            let maxContentX = 0;
+                            
+                            contentElements.forEach(el => {
+                                try {
+                                    const elBBox = el.getBBox();
+                                    const rightEdge = elBBox.x + elBBox.width;
+                                    if (rightEdge > maxContentX && elBBox.width > 0) {
+                                        maxContentX = rightEdge;
+                                    }
+                                } catch (e) {
+                                    // Skip elements that don't have getBBox
+                                }
+                            });
+                            
+                            if (maxContentX > 0) {
+                                const trimmedWidth = Math.min(bbox.width, maxContentX - bbox.x + 5);
+                                adjustedBBox = {
+                                    x: bbox.x,
+                                    y: bbox.y,
+                                    width: trimmedWidth,
+                                    height: bbox.height
+                                };
+                            }
+                        }
+                        
+                        totalWidth = adjustedBBox.width + padding * 2;
+                        totalHeight = adjustedBBox.height + padding * 2;
                         svgClone = svgElement.cloneNode(true);
                         svgClone.setAttribute('width', totalWidth);
                         svgClone.setAttribute('height', totalHeight);
-                        svgClone.setAttribute('viewBox', `${bbox.x - padding} ${bbox.y - padding} ${totalWidth} ${totalHeight}`);
+                        svgClone.setAttribute('viewBox', `${adjustedBBox.x - padding} ${adjustedBBox.y - padding} ${totalWidth} ${totalHeight}`);
                         svgClone.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
                         svgClone.setAttribute('xmlns:xlink', 'http://www.w3.org/1999/xlink');
                         // Inline styles (adds fill/stroke/font + we'll add text-anchor explicitly)
@@ -1603,15 +1637,52 @@
             prepareSVGForExport(svgElement, padding = null) {
                 if (padding === null) padding = this.getPadding();
                 
-                // Always use getBBox for true content size
+                // Get the bounding box for content size
                 const bbox = svgElement.getBBox();
-                const totalWidth = bbox.width + (padding * 2);
-                const totalHeight = bbox.height + (padding * 2);
+                
+                // Check if this is a Gantt chart for trimming
+                const isGantt = !!(svgElement.querySelector('[class*="section"]') || 
+                                  svgElement.querySelector('[class*="task"]') ||
+                                  svgElement.textContent.includes('gantt'));
+                
+                let adjustedBBox = bbox;
+                
+                if (isGantt) {
+                    // For Gantt charts, find the actual rightmost content to trim whitespace
+                    const contentElements = svgElement.querySelectorAll('rect, text, path, line, circle');
+                    let maxContentX = 0;
+                    
+                    contentElements.forEach(el => {
+                        try {
+                            const elBBox = el.getBBox();
+                            const rightEdge = elBBox.x + elBBox.width;
+                            if (rightEdge > maxContentX && elBBox.width > 0) {
+                                maxContentX = rightEdge;
+                            }
+                        } catch (e) {
+                            // Skip elements that don't have getBBox
+                        }
+                    });
+                    
+                    // If we found actual content, trim to that + minimal margin
+                    if (maxContentX > 0) {
+                        const trimmedWidth = Math.min(bbox.width, maxContentX - bbox.x + 5);
+                        adjustedBBox = {
+                            x: bbox.x,
+                            y: bbox.y,
+                            width: trimmedWidth,
+                            height: bbox.height
+                        };
+                    }
+                }
+                
+                const totalWidth = adjustedBBox.width + (padding * 2);
+                const totalHeight = adjustedBBox.height + (padding * 2);
                 const svgClone = svgElement.cloneNode(true);
                 
                 svgClone.setAttribute('width', totalWidth);
                 svgClone.setAttribute('height', totalHeight);
-                svgClone.setAttribute('viewBox', `${bbox.x - padding} ${bbox.y - padding} ${totalWidth} ${totalHeight}`);
+                svgClone.setAttribute('viewBox', `${adjustedBBox.x - padding} ${adjustedBBox.y - padding} ${totalWidth} ${totalHeight}`);
                 
                 // Ensure proper namespace
                 svgClone.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
@@ -1645,7 +1716,7 @@
                 
                 console.log(`📊 Export ready: ${svgClone.querySelectorAll('text, tspan').length} text elements`);
                 
-                return { svgClone, bbox, totalWidth, totalHeight };
+                return { svgClone, bbox: adjustedBBox, totalWidth, totalHeight };
             },
 
             // Helper: convert any remaining foreignObject labels (if present) into plain <text>
