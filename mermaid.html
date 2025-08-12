@@ -1149,9 +1149,9 @@
                             }
                         });
                         
-                        // If we found actual content, trim to that + small margin
+                        // If we found actual content, trim to that + minimal margin
                         if (maxContentX > 0) {
-                            const trimmedWidth = Math.min(bbox.width, maxContentX - bbox.x + 20); // 20px margin
+                            const trimmedWidth = Math.min(bbox.width, maxContentX - bbox.x); // Reduced to 0px margin
                             adjustedBBox = {
                                 x: bbox.x,
                                 y: bbox.y,
@@ -1250,9 +1250,9 @@
                             }
                         });
                         
-                        // If we found actual content, trim to that + small margin
+                        // If we found actual content, trim to that + minimal margin
                         if (maxContentX > 0) {
-                            const trimmedWidth = Math.min(bbox.width, maxContentX - bbox.x + 20); // 20px margin
+                            const trimmedWidth = Math.min(bbox.width, maxContentX - bbox.x); // Reduced to 0px margin
                             adjustedBBox = {
                                 x: bbox.x,
                                 y: bbox.y,
