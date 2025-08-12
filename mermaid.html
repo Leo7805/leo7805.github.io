@@ -1,0 +1,2459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mermaid Diagram Crafter</title>
+    
+    <!-- Favicon - Built-in SVG Icon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8IS0tIEdyYWRpZW50IEJhY2tncm91bmQgLS0+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnR3JhZGllbnQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojNjY3ZWVhO3N0b3Atb3BhY2l0eToxIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiM3NjRiYTI7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJub2RlR3JhZGllbnQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojNGZhY2ZlO3N0b3Atb3BhY2l0eToxIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwMGYyZmU7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8IS0tIEJhY2tncm91bmQgLS0+CiAgPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0idXJsKCNiZ0dyYWRpZW50KSIvPgogIDwhLS0gRGlhZ3JhbSBOb2RlcyAtLT4KICA8Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iMyIgZmlsbD0idXJsKCNub2RlR3JhZGllbnQpIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjEiLz4KICA8Y2lyY2xlIGN4PSIyNCIgY3k9IjgiIHI9IjMiIGZpbGw9InVybCgjbm9kZUdyYWRpZW50KSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgPGNpcmNsZSBjeD0iMTYiIGN5PSIyNCIgcj0iMyIgZmlsbD0idXJsKCNub2RlR3JhZGllbnQpIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjEiLz4KICA8IS0tIENvbm5lY3RpbmcgTGluZXMgLS0+CiAgPGxpbmUgeDE9IjgiIHkxPSI4IiB4Mj0iMjQiIHkyPSI4IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIG9wYWNpdHk9IjAuOCIvPgogIDxsaW5lIHgxPSI4IiB5MT0iOCIgeDI9IjE2IiB5Mj0iMjQiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIgb3BhY2l0eT0iMC44Ii8+CiAgPGxpbmUgeDE9IjI0IiB5MT0iOCIgeDI9IjE2IiB5Mj0iMjQiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIgb3BhY2l0eT0iMC44Ii8+CiAgPCEtLSBDZW50ZXIgSWNvbiAtLT4KICA8dGV4dCB4PSIxNiIgeT0iMTgiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSI4IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9ImJvbGQiPk08L3RleHQ+Cjwvc3ZnPgo=">
+    
+    <!-- Fallback favicon for older browsers -->
+    <link rel="shortcut icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABILAAASCwAAAAAAAAAAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AZm7q/2Zu6v9mbur/Zm7q/2Zu6v9mbur/Zm7q/2Zu6v9mbur/Zm7q/2Zu6v9mbur/Zm7q/2Zu6v9mbur/Zm7q/2Zu6v9mbur/Zm7q/2Zu6v9mbur/Zm7q/2Zu6v9mbur/Zm7q/2Zu6v9mbur/Zm7q/2Zu6v9mbur/Zm7q/2Zu6v9mbur/Zm7q/2Zu6v9mbur/Zm7q/2Zu6v9mbur/Zm7q/2Zu6v9mbur/Zm7q/2Zu6v9mbur/Zm7q/2Zu6v9mbur/AP//4A////4P////D////w////8P////D////w////8P////D////w////8P////D////w////8P////D////wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A">
+    
+    <!-- Load libraries with CDN fallback -->
+    <script>
+        // Function to load script with fallback
+        function loadScriptWithFallback(localPath, cdnPath, callback) {
+            const script = document.createElement('script');
+            script.src = localPath;
+            script.onload = callback;
+            script.onerror = function() {
+                console.log('Local file not found:', localPath, 'falling back to CDN:', cdnPath);
+                const fallbackScript = document.createElement('script');
+                fallbackScript.src = cdnPath;
+                fallbackScript.onload = callback;
+                fallbackScript.onerror = function() {
+                    console.error('Failed to load both local and CDN versions of:', localPath);
+                };
+                document.head.appendChild(fallbackScript);
+            };
+            document.head.appendChild(script);
+        }
+
+        // Function to load CSS with fallback
+        function loadCSSWithFallback(localPath, cdnPath) {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = localPath;
+            link.onerror = function() {
+                console.log('Local CSS not found:', localPath, 'falling back to CDN:', cdnPath);
+                const fallbackLink = document.createElement('link');
+                fallbackLink.rel = 'stylesheet';
+                fallbackLink.href = cdnPath;
+                fallbackLink.onerror = function() {
+                    console.error('Failed to load both local and CDN versions of:', localPath);
+                };
+                document.head.appendChild(fallbackLink);
+            };
+            document.head.appendChild(link);
+        }
+
+        // Load Font Awesome CSS first
+        loadCSSWithFallback(
+            'libs/font-awesome.min.css',
+            'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'
+        );
+
+        // Establish jsPDF bridge early for svg2pdf compatibility
+        function ensureJsPDFBridge() {
+            if (window.jspdf && window.jspdf.jsPDF && !window.jsPDF) {
+                window.jsPDF = window.jspdf.jsPDF;
+                console.log('🔗 Bridged window.jsPDF for svg2pdf compatibility');
+                return true;
+            }
+            if (window.jsPDF) {
+                console.log('✅ window.jsPDF already available');
+                return true;
+            }
+            console.log('⚠️ jsPDF not yet available');
+            return false;
+        }
+
+    // Counter to track core libraries needed before initializeApp
+    let scriptsLoaded = 0;
+    const totalScripts = 3; // mermaid, html2canvas, svg2pdf (jsPDF ensured before svg2pdf callback)
+
+        // Try injecting svg2pdf from localStorage cache (offline support)
+        // DISABLED until jsPDF loads to prevent errors
+        /*
+        (function injectSvg2PdfFromCache(){
+            try {
+                if(!window.svg2pdf){
+                    const cached = localStorage.getItem('svg2pdf-cache-2.5.0');
+                    if(cached){
+                        console.log('🔄 Injecting svg2pdf from localStorage cache');
+                        
+                        // Ensure jsPDF bridge exists before loading svg2pdf
+                        ensureJsPDFBridge();
+                        
+                        const scriptEl = document.createElement('script');
+                        scriptEl.textContent = cached + '\n//# sourceURL=svg2pdf.cached.js';
+                        document.head.appendChild(scriptEl);
+                        console.log('✅ svg2pdf loaded from cache, type:', typeof window.svg2pdf);
+                    }
+                }
+            } catch(e){ console.warn('Cache inject failed', e); }
+        })();
+        */
+
+        function onScriptLoad() {
+            scriptsLoaded++;
+            console.log(`📦 Script ${scriptsLoaded}/${totalScripts} loaded`);
+            if (scriptsLoaded === totalScripts) {
+                console.log('✅ All libraries loaded successfully');
+                
+                // Initialize the application after all scripts are loaded
+                if (typeof initializeApp === 'function') {
+                    initializeApp();
+                }
+            }
+        }
+
+        // Load scripts with fallback
+        loadScriptWithFallback(
+            'libs/mermaid.min.js',
+            'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js',
+            onScriptLoad
+        );
+
+        // html2canvas (for raster exports) local-first
+        loadScriptWithFallback(
+            'libs/html2canvas.min.js',
+            'https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js',
+            function(){
+                console.log('✅ html2canvas loaded');
+                onScriptLoad();
+            }
+        );
+
+        loadScriptWithFallback(
+            'libs/jspdf.umd.min.js',
+            'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js',
+            function(){
+                // Establish the bridge immediately after jsPDF loads
+                ensureJsPDFBridge();
+                console.log('✅ jsPDF loaded, prototype has:', Object.getOwnPropertyNames(window.jsPDF.prototype).filter(p => p.includes('svg')));
+                
+                // Load svg2pdf AFTER jsPDF is confirmed ready
+                setTimeout(() => {
+                    loadScriptWithFallback(
+                        'libs/svg2pdf.umd.min.js',
+                        'https://cdn.jsdelivr.net/npm/svg2pdf.js@2.5.0/dist/svg2pdf.umd.min.js',
+                        function(){
+                            console.log('✅ svg2pdf 2.5.0 loaded successfully');
+                            
+                            // Ensure jsPDF bridge is available
+                            ensureJsPDFBridge();
+                            
+                            // svg2pdf should automatically extend jsPDF when loaded properly
+                            setTimeout(() => {
+                                if (window.jsPDF && window.jsPDF.prototype) {
+                                    const hasSvgMethod = typeof window.jsPDF.prototype.svg === 'function';
+                                    console.log('✅ jsPDF.prototype.svg available:', hasSvgMethod);
+                                    
+                                    if (!hasSvgMethod && window.svg2pdf) {
+                                        console.log('🔧 Attempting manual svg2pdf integration...');
+                                        // Try different integration approaches
+                                        try {
+                                            if (window.svg2pdf.jsPDF) {
+                                                window.svg2pdf.jsPDF(window.jsPDF);
+                                            }
+                                        } catch (e) {
+                                            console.warn('Manual integration failed:', e);
+                                        }
+                                    }
+                                }
+                            }, 100);
+                            
+                            onScriptLoad();
+                        }
+                    );
+                }, 100); // Small delay to ensure jsPDF is fully initialized
+                
+                // Count jsPDF only after svg2pdf companion has loaded to ensure vector pipeline ready
+                // (svg2pdf callback will invoke onScriptLoad)
+            }
+        );
+
+        // Load PDFKit for better arrow/marker support (optional, non-blocking)
+        loadScriptWithFallback(
+            'libs/pdfkit.standalone.js',
+            'https://cdn.jsdelivr.net/npm/pdfkit@0.13.0/js/pdfkit.standalone.js',
+            function() {
+                console.log('✅ PDFKit loaded successfully');
+                // Load svg-to-pdfkit after PDFKit
+                loadScriptWithFallback(
+                    'libs/svg-to-pdfkit.js',
+                    'https://unpkg.com/svg-to-pdfkit@0.1.8/dist/svg-to-pdfkit.js',
+                    function() {
+                        console.log('✅ svg-to-pdfkit loaded successfully - enhanced arrow support available');
+                    }
+                );
+            }
+        );
+    </script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6; 
+            padding: 20px; 
+            max-width: 1200px; 
+            margin: 0 auto;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            overscroll-behavior: contain; /* prevent parent bounce */
+        }
+
+        html { scroll-padding-top: 12px; }
+        .bottom-scroll-spacer { height: 100vh; width:100%; pointer-events:none; position: relative; }        .container {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2d3748;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        
+        .app-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .app-logo::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent,
+                rgba(255, 255, 255, 0.1),
+                transparent
+            );
+            animation: logoShimmer 3s infinite;
+        }
+        
+        @keyframes logoShimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+        
+        .logo-icon {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .logo-icon .mermaid-emoji {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .logo-icon .tools-emoji {
+            animation: float 3s ease-in-out infinite 1.5s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .logo-title {
+            color: white;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 0;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 2;
+            letter-spacing: 1px;
+        }
+        
+        .logo-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            margin: 8px 0 0 0;
+            font-weight: 400;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            font-style: italic;
+        }
+        
+        .logo-decorative {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.5rem;
+            opacity: 0.3;
+            animation: sparkle 2s ease-in-out infinite;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.2); }
+        }
+        
+        .controls {
+            display: grid;
+            grid-template-columns: auto auto 1fr;
+            gap: 20px;
+            margin-bottom: 25px;
+            align-items: center;
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .padding-control {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: white;
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .button-group {
+            display: grid;
+            grid-template-columns: auto repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            align-items: center;
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 25px;
+        }
+        
+        .export-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            grid-column: 2 / -1;
+        }
+
+        .raster-scale-wrapper {
+            grid-column: 1 / -1;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 4px 8px 10px 2px;
+            font-size: 0.85rem;
+            color: #555;
+        }
+        .raster-scale-wrapper label { font-weight: 600; color: #333; }
+        .raster-scale-wrapper select {
+            padding: 4px 8px;
+            border-radius: 6px;
+            border: 1px solid #ccd;
+            background: #fff;
+            font-size: 0.85rem;
+        }
+        
+        .export-group {
+            display: contents;
+        }
+        
+        .export-group.primary {
+            order: 1;
+        }
+        
+        .export-group.secondary {
+            order: 2;
+        }
+        
+        .export-group.utility {
+            order: 3;
+        }
+        
+        .padding-control label {
+            font-weight: 600;
+            color: #4a5568;
+            margin: 0;
+            white-space: nowrap;
+        }
+        
+        .padding-control input {
+            width: 70px;
+            padding: 8px 12px;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            text-align: center;
+            margin: 0;
+        }
+        
+        .theme-selector {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: white;
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .theme-selector label {
+            font-weight: 600;
+            color: #4a5568;
+            margin: 0;
+            white-space: nowrap;
+        }
+        
+        .theme-selector select {
+            min-width: 140px;
+            font-size: 0.9rem;
+        }
+        
+        .type-indicator-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: white;
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .type-indicator-wrapper label {
+            font-weight: 600;
+            color: #4a5568;
+            margin: 0;
+            white-space: nowrap;
+        }
+        
+        .type-indicator {
+            display: flex;
+            align-items: center;
+        }
+        
+        .type-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-align: center;
+            min-width: 140px;
+            box-shadow: 0 2px 4px rgba(102, 126, 234, 0.2);
+        }
+        
+        .type-badge.auto-detected {
+            background: linear-gradient(135deg, #a0aec0 0%, #718096 100%);
+            color: white;
+            box-shadow: 0 2px 4px rgba(160, 174, 192, 0.2);
+        }
+        
+        .type-badge.auto-detected::before {
+            content: "🤖 ";
+        }
+        
+        textarea { 
+            width: 100%; 
+            height: 250px; 
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 14px;
+            resize: vertical;
+            transition: border-color 0.3s ease;
+        }
+        
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .button-group {
+            display: grid;
+            grid-template-columns: auto repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            align-items: center;
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 25px;
+        }
+        
+        button {
+            padding: 12px 18px;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        
+        button:active {
+            transform: translateY(0);
+            transition: all 0.1s ease;
+        }
+        
+        button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.2),
+                transparent
+            );
+            transition: left 0.5s;
+        }
+        
+        button:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(240, 147, 251, 0.3);
+        }
+        
+        .btn-success {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+        }
+
+        /* Specific export button themes */
+        .btn-export-svg {
+            background: linear-gradient(135deg, #ff9a9e 0%, #f6416c 100%);
+            box-shadow: 0 4px 15px rgba(246, 65, 108, 0.35);
+        }
+        .btn-export-png {
+            background: linear-gradient(135deg, #4facfe 0%, #00c6fb 100%);
+            box-shadow: 0 4px 15px rgba(79, 172, 254, 0.35);
+        }
+        .btn-export-webp {
+            background: linear-gradient(135deg, #42e695 0%, #3bb2b8 100%);
+            box-shadow: 0 4px 15px rgba(66, 230, 149, 0.35);
+        }
+        .btn-export-pdf {
+            background: linear-gradient(135deg, #a18cd1 0%, #6f86d6 100%);
+            box-shadow: 0 4px 15px rgba(161, 140, 209, 0.35);
+        }
+        .export-buttons button span.icon { margin-right: 8px; display:inline-block; }
+        
+        .btn-info {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn-warning {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(67, 233, 123, 0.3);
+        }
+        
+        .export-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            grid-column: 2 / -1;
+        }
+        
+        .export-group {
+            display: contents;
+        }
+        
+        .export-group.primary {
+            order: 1;
+        }
+        
+        .export-group.secondary {
+            order: 2;
+        }
+        
+        .export-group.utility {
+            order: 3;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .button-group {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .export-buttons {
+                grid-column: 1;
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .export-group {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            button {
+                padding: 14px 20px;
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .controls {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .export-buttons {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        #output { 
+            border: 2px solid #e2e8f0; 
+            border-radius: 8px;
+            padding: 20px; 
+            margin-top: 20px;
+            background: #f8fafc;
+            min-height: 200px;
+        }
+        
+        #error { 
+            color: #e53e3e;
+            background: #fed7d7;
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 10px;
+            display: none;
+            border-left: 4px solid #e53e3e;
+        }
+        
+        #error:not(:empty) {
+            display: block;
+        }
+        
+        .success-toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 10000;
+            background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            font-weight: 600;
+            animation: slideInRight 0.3s ease;
+            max-width: 300px;
+        }
+        
+        @keyframes slideInRight {
+            from { 
+                transform: translateX(100%); 
+                opacity: 0; 
+            }
+            to { 
+                transform: translateX(0); 
+                opacity: 1; 
+            }
+        }
+        
+        .loading-spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 8px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .btn-loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+        
+        @media (max-width: 768px) {
+            .controls {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .padding-control, .theme-selector, .type-indicator-wrapper {
+                justify-content: space-between;
+            }
+            
+            .button-group {
+                flex-direction: column;
+            }
+            
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+        }
+        
+        @media print {
+            body, html {
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            body * { visibility: hidden; }
+            #output, #output * { visibility: visible; }
+            #output {
+                margin: 0 !important;
+                padding: 0 !important;
+                border: none !important;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: auto !important;
+                height: auto !important;
+                max-width: none !important;
+                max-height: none !important;
+                background: none !important;
+                box-sizing: content-box !important;
+            }
+            #output svg {
+                width: 100% !important;
+                height: auto !important;
+                display: block;
+                margin: 0 !important;
+                background: none !important;
+                box-sizing: content-box !important;
+            }
+            @page {
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="app-logo">
+            <div class="logo-decorative">✨</div>
+            <div class="logo-icon">
+                <span class="mermaid-emoji">🧜‍♀️</span>
+                <span class="tools-emoji">🎨</span>
+            </div>
+            <h1 class="logo-title">Mermaid Diagram Crafter</h1>
+            <p class="logo-subtitle">Transform Ideas into Beautiful Diagrams</p>
+            <div style="margin-top: 10px;">
+                <a href="https://github.com/imehr/MermaidDiagramCrafter/tree/624ae1984f8c3b34607a39c16f8e8c2d225afe00" 
+                   target="_blank" 
+                   style="color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 6px; transition: color 0.3s ease;"
+                   onmouseover="this.style.color='rgba(255,255,255,1)'" 
+                   onmouseout="this.style.color='rgba(255,255,255,0.8)'">
+                    <span>📚</span> Based on GitHub 
+                    <svg style="width: 16px; height: 16px; fill: currentColor;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <div class="padding-control">
+                <label for="exportPadding">Export Padding:</label>
+                <input type="number" id="exportPadding" min="0" max="50" value="2" />
+                <span>px</span>
+            </div>
+            
+            <div class="theme-selector">
+                <label for="themeSelect">Theme:</label>
+                <select id="themeSelect" style="padding: 8px 12px; border-radius: 6px; border: 1px solid #cbd5e0; background: white;">
+                    <option value="default">🎨 Default</option>
+                    <option value="dark">🌙 Dark</option>
+                    <option value="forest">🌲 Forest</option>
+                    <option value="base">📋 Base</option>
+                    <option value="neutral">⚪ Neutral</option>
+                </select>
+            </div>
+            
+            <div class="type-indicator-wrapper">
+                <label>Detected Type:</label>
+                <div id="diagramTypeIndicator" class="type-indicator">
+                    <span class="type-badge">Flowchart (Top-Down)</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="input">Diagram Code</label>
+            <textarea id="input" placeholder="Enter your Mermaid diagram code here...">pie title Pets adopted by volunteers
+    "Dogs" : 386
+    "Cats" : 85
+    "Rats" : 15</textarea>
+        </div>
+        
+        <div class="button-group">
+            <select id="exampleSelect" style="padding: 8px 12px; border-radius: 6px; border: 1px solid #cbd5e0; background: white;">
+                <option value="">📝 Quick Examples</option>
+                <option value="flowchart">🔄 Basic Flowchart</option>
+                <option value="sequence">📋 Sequence Diagram</option>
+                <option value="pie">🥧 Pie Chart</option>
+                <option value="gantt">📅 Gantt Chart</option>
+                <option value="class">🏗️ Class Diagram</option>
+                <option value="state">⚡ State Diagram</option>
+                <option value="er">🔗 ER Diagram</option>
+                <option value="" disabled style="color: #999;">⚠️ ZenUML (Not supported in current Mermaid version)</option>
+            </select>
+            
+            <div class="export-buttons">
+                <div class="raster-scale-wrapper">
+                    <label for="rasterScale">Raster scale (PNG/WebP):</label>
+                    <select id="rasterScale">
+                        <option value="1">1x (96 DPI)</option>
+                        <option value="2" selected>2x (~192 DPI, recommended)</option>
+                        <option value="3">3x (~288 DPI)</option>
+                        <option value="4">4x (~384 DPI)</option>
+                        <option value="5">5x (~480 DPI)</option>
+                        <option value="6">6x (~576 DPI)</option>
+                        <option value="8">8x (~768 DPI)</option>
+                    </select>
+                    <span style="opacity:.7"> Higher = sharper + larger file.</span>
+                </div>
+                <!-- Primary Export Options -->
+                <div class="export-group primary">
+                    <button class="btn-export-svg" onclick="exportSVG()"><span class="icon">🔥</span><span>Export SVG</span></button>
+                    <button class="btn-export-png" onclick="exportPNG()"><span class="icon">🖼️</span><span>Export PNG</span></button>
+                    <button class="btn-export-webp" onclick="exportWEBP()"><span class="icon">🌐</span><span>Export WebP</span></button>
+                </div>
+                
+                <!-- Secondary Export Options -->
+                <div class="export-group secondary">
+                    <button class="btn-export-pdf" onclick="exportTrueSizePDF()"><span class="icon">📄</span><span>Export PDF</span></button>
+                </div>
+                
+                <!-- Utility Options -->
+                <div class="export-group utility">
+                </div>
+            </div>
+        </div>
+        
+    <div id="output"></div>
+    <div id="error"></div>
+    
+    <div class="bottom-scroll-spacer">
+        <!-- Message that appears when fully scrolled to the very bottom -->
+        <div style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); text-align: center; color: #999; font-size: 0.85rem; opacity: 0.8;">
+            🎯 Congratulations! You've reached the absolute bottom!<br>
+            <span style="font-size: 0.75rem;">📏 "I have my limits too!" - This page 😄</span>
+        </div>
+    </div>
+    </div>    
+    <script>
+        // Dynamic spacer so bottom content can align with top of viewport when scrolled fully
+        (function(){
+            function adjustScrollSpacer(){
+                const spacer = document.querySelector('.bottom-scroll-spacer');
+                if(!spacer) return;
+                // Use innerHeight to capture visible viewport
+                spacer.style.height = window.innerHeight + 'px';
+            }
+            window.addEventListener('resize', adjustScrollSpacer);
+            window.addEventListener('orientationchange', adjustScrollSpacer);
+            document.addEventListener('DOMContentLoaded', adjustScrollSpacer);
+            adjustScrollSpacer();
+        })();
+        // ============================================================================
+        // MermaidDiagramCrafter - Modular Architecture
+        // ============================================================================
+        
+        class MermaidDiagramCrafter {
+            constructor() {
+                this.config = {
+                    debounceDelay: 500,
+                    exportScales: {
+                        png: 2,
+                        pdf: 2
+                    },
+                    defaultPadding: 0
+                };
+                this.renderTimeout = null;
+                this.isInitialized = false;
+                this.elements = {};
+                
+                this.bindElements();
+                this.setupEventListeners();
+            }
+            
+            bindElements() {
+                this.elements = {
+                    input: document.getElementById('input'),
+                    output: document.getElementById('output'),
+                    error: document.getElementById('error'),
+                    exportPadding: document.getElementById('exportPadding'),
+                    typeIndicator: document.getElementById('diagramTypeIndicator')
+                };
+            }
+            
+            setupEventListeners() {
+                if (this.elements.input) {
+                    this.elements.input.addEventListener('paste', (e) => {
+                        setTimeout(() => {
+                            this.updateTypeIndicator();
+                            this.renderDiagram();
+                        }, 0);
+                    });
+                    
+                    this.elements.input.addEventListener('input', () => {
+                        this.updateTypeIndicator();
+                        this.debounceRender();
+                    });
+                }
+            }
+            
+            debounceRender() {
+                clearTimeout(this.renderTimeout);
+                this.renderTimeout = setTimeout(() => {
+                    this.renderDiagram();
+                }, this.config.debounceDelay);
+            }
+
+            updateTypeIndicator() {
+                if (!this.elements.input || !this.elements.typeIndicator) {
+                    return;
+                }
+                
+                const text = this.elements.input.value;
+                // Remove YAML frontmatter if present
+                let cleanText = text.replace(/^---[\s\S]*?---\s*/m, '').trim();
+                const firstLine = cleanText.split('\n')[0].trim();
+                let typeName = 'Auto-detected (Flowchart)'; // default when not detected
+                let isDetected = false;
+                
+                for (const t of this.typeMap) {
+                    if (firstLine.startsWith(t.key)) {
+                        typeName = t.name;
+                        isDetected = true;
+                        break;
+                    }
+                }
+                
+                // Add visual indicator for auto-detected vs explicitly detected
+                const badgeClass = isDetected ? 'type-badge' : 'type-badge auto-detected';
+                this.elements.typeIndicator.innerHTML = `<span class="${badgeClass}">${typeName}</span>`;
+            }
+
+            renderDiagram() {
+                // This method should be implemented to render the mermaid diagram
+                // For now, we'll call the global renderDiagram function if available
+                if (typeof renderDiagram === 'function') {
+                    renderDiagram();
+                }
+            }
+            
+            // Diagram type detection and mapping
+            get typeMap() {
+                return [
+                    { key: 'C4Context', value: 'C4Context', name: 'C4 Context Diagram' },
+                    { key: 'C4Container', value: 'C4Container', name: 'C4 Container Diagram' },
+                    { key: 'C4Component', value: 'C4Component', name: 'C4 Component Diagram' },
+                    { key: 'C4Dynamic', value: 'C4Dynamic', name: 'C4 Dynamic Diagram' },
+                    { key: 'C4Deployment', value: 'C4Deployment', name: 'C4 Deployment Diagram' },
+                    { key: 'flowchart TB', value: 'flowchart TB', name: 'Flowchart (Top-Bottom)' },
+                    { key: 'flowchart TD', value: 'flowchart TD', name: 'Flowchart (Top-Down)' },
+                    { key: 'flowchart LR', value: 'flowchart LR', name: 'Flowchart (Left-Right)' },
+                    { key: 'graph TD', value: 'graph TD', name: 'Flowchart (Top-Down)' },
+                    { key: 'graph LR', value: 'graph LR', name: 'Flowchart (Left-Right)' },
+                    { key: 'sequenceDiagram', value: 'sequenceDiagram', name: 'Sequence Diagram' },
+                    { key: 'classDiagram', value: 'classDiagram', name: 'Class Diagram' },
+                    { key: 'stateDiagram-v2', value: 'stateDiagram-v2', name: 'State Diagram' },
+                    { key: 'gantt', value: 'gantt', name: 'Gantt Chart' },
+                    { key: 'pie showData', value: 'pie showData', name: 'Pie Chart (with data)' },
+                    { key: 'pie', value: 'pie', name: 'Pie Chart' },
+                    { key: 'erDiagram', value: 'erDiagram', name: 'ER Diagram' },
+                    { key: 'journey', value: 'journey', name: 'Journey Diagram' },
+                    { key: 'requirementDiagram', value: 'requirementDiagram', name: 'Requirement Diagram' },
+                    { key: 'gitGraph', value: 'gitGraph', name: 'Git Graph' },
+                    { key: 'mindmap', value: 'mindmap', name: 'Mindmap' },
+                    { key: 'timeline', value: 'timeline', name: 'Timeline' },
+                    { key: 'quadrantChart', value: 'quadrantChart', name: 'Quadrant Chart' },
+                    { key: 'zenuml', value: 'zenuml', name: 'ZenUML Sequence' },
+                    { key: 'sankey-beta', value: 'sankey-beta', name: 'Sankey Diagram (Beta)' }
+                ];
+            }
+
+            // Export Methods
+            exportSVG() {
+                const svgElement = document.querySelector('#output svg');
+                if (svgElement) {
+                    try {
+                        // Clone the SVG to avoid modifying the original
+                        const svgClone = svgElement.cloneNode(true);
+                        
+                        // Get the padding value from the input field
+                        const padding = parseInt(document.getElementById('exportPadding').value) || 0;
+                        
+                        // Get the bounding box for proper dimensions
+                        const bbox = svgElement.getBBox();
+                        const computedStyle = window.getComputedStyle(svgElement);
+                        
+                        // Calculate proper dimensions with padding
+                        let width = bbox.width;
+                        let height = bbox.height;
+                        
+                        // If bbox is empty, try to get computed dimensions
+                        if (width === 0 || height === 0) {
+                            width = parseFloat(computedStyle.width) || 800;
+                            height = parseFloat(computedStyle.height) || 600;
+                        }
+                        
+                        // Add padding to dimensions
+                        const totalWidth = width + (padding * 2);
+                        const totalHeight = height + (padding * 2);
+                        
+                        // Set proper SVG attributes with padding
+                        svgClone.setAttribute('width', totalWidth);
+                        svgClone.setAttribute('height', totalHeight);
+                        svgClone.setAttribute('viewBox', `${bbox.x - padding} ${bbox.y - padding} ${totalWidth} ${totalHeight}`);
+                        
+                        // Ensure proper namespace
+                        svgClone.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+                        svgClone.setAttribute('xmlns:xlink', 'http://www.w3.org/1999/xlink');
+                        
+                        const svgData = new XMLSerializer().serializeToString(svgClone);
+                        const svgBlob = new Blob([svgData], {type: 'image/svg+xml;charset=utf-8'});
+                        const svgUrl = URL.createObjectURL(svgBlob);
+                        const downloadLink = document.createElement('a');
+                        downloadLink.href = svgUrl;
+                        downloadLink.download = 'mermaid_diagram.svg';
+                        document.body.appendChild(downloadLink);
+                        downloadLink.click();
+                        document.body.removeChild(downloadLink);
+                        URL.revokeObjectURL(svgUrl);
+                        
+                        Utils.showSuccessToast('SVG exported successfully!');
+                    } catch (error) {
+                        console.error('SVG export error:', error);
+                        alert('Error exporting SVG: ' + error.message);
+                    }
+                } else {
+                    alert('Please render a diagram first before exporting.');
+                }
+            }
+
+            async exportPNG() {
+                try {
+                    const svgElement = document.querySelector('#output svg');
+                    if (!svgElement) {
+                        throw new Error('No diagram found to export');
+                    }
+
+                    // Use the same simple SVG preparation as the working SVG export
+                    const svgClone = svgElement.cloneNode(true);
+                    
+                    // Get the padding value from the input field
+                    const padding = parseInt(document.getElementById('exportPadding').value) || 0;
+                    
+                    // Get the bounding box for proper dimensions
+                    const bbox = svgElement.getBBox();
+                    const computedStyle = window.getComputedStyle(svgElement);
+                    
+                    // Calculate proper dimensions with padding
+                    let width = bbox.width;
+                    let height = bbox.height;
+                    
+                    // If bbox is empty, try to get computed dimensions
+                    if (width === 0 || height === 0) {
+                        width = parseFloat(computedStyle.width) || 800;
+                        height = parseFloat(computedStyle.height) || 600;
+                    }
+                    
+                    // Add padding to dimensions
+                    const totalWidth = width + (padding * 2);
+                    const totalHeight = height + (padding * 2);
+                    
+                    // Set proper SVG attributes with padding
+                    svgClone.setAttribute('width', totalWidth);
+                    svgClone.setAttribute('height', totalHeight);
+                    svgClone.setAttribute('viewBox', `${bbox.x - padding} ${bbox.y - padding} ${totalWidth} ${totalHeight}`);
+                    
+                    // Ensure proper namespace
+                    svgClone.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+                    svgClone.setAttribute('xmlns:xlink', 'http://www.w3.org/1999/xlink');
+
+                    // User-selected raster scale (fallback to config or 1)
+                    const userScale = parseFloat(document.getElementById('rasterScale')?.value);
+                    const scale = userScale || (this.config && this.config.exportScales ? this.config.exportScales.png : 2) || 2; // default 2x as before
+                    
+                    const canvas = document.createElement('canvas');
+                    canvas.width = totalWidth * scale;
+                    canvas.height = totalHeight * scale;
+                    const ctx = canvas.getContext('2d');
+                    ctx.scale(scale, scale);
+
+                    // Set white background to match HTML display
+                    ctx.fillStyle = 'white';
+                    ctx.fillRect(0, 0, totalWidth, totalHeight);
+
+                    const svgData = new XMLSerializer().serializeToString(svgClone);
+                    const img = new Image();
+                    
+                    img.onload = () => {
+                        ctx.drawImage(img, 0, 0);
+                        canvas.toBlob((blob) => {
+                            const url = URL.createObjectURL(blob);
+                            Utils.downloadFile(url, 'mermaid-diagram.png');
+                            Utils.showSuccessToast('PNG exported successfully!');
+                        }, 'image/png');
+                    };
+                    
+                    img.src = 'data:image/svg+xml;base64,' + btoa(svgData);
+                } catch (error) {
+                    Utils.handleExportError(error, 'PNG');
+                }
+            }
+
+            async exportWEBP() {
+                try {
+                    const svgElement = document.querySelector('#output svg');
+                    if (!svgElement) throw new Error('No diagram found to export');
+
+                    const svgClone = svgElement.cloneNode(true);
+                    const padding = parseInt(document.getElementById('exportPadding').value) || 0;
+                    const bbox = svgElement.getBBox();
+                    const computedStyle = window.getComputedStyle(svgElement);
+                    let width = bbox.width;
+                    let height = bbox.height;
+                    if (width === 0 || height === 0) {
+                        width = parseFloat(computedStyle.width) || 800;
+                        height = parseFloat(computedStyle.height) || 600;
+                    }
+                    const totalWidth = width + (padding * 2);
+                    const totalHeight = height + (padding * 2);
+                    svgClone.setAttribute('width', totalWidth);
+                    svgClone.setAttribute('height', totalHeight);
+                    svgClone.setAttribute('viewBox', `${bbox.x - padding} ${bbox.y - padding} ${totalWidth} ${totalHeight}`);
+                    svgClone.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+                    svgClone.setAttribute('xmlns:xlink', 'http://www.w3.org/1999/xlink');
+
+                    // Reuse png scale or allow a custom higher scale for WebP
+                    const userScale = parseFloat(document.getElementById('rasterScale')?.value);
+                    const scale = userScale || (this.config && this.config.exportScales ? this.config.exportScales.png : 2) || 2;
+                    const canvas = document.createElement('canvas');
+                    canvas.width = totalWidth * scale;
+                    canvas.height = totalHeight * scale;
+                    const ctx = canvas.getContext('2d');
+                    ctx.scale(scale, scale);
+                    ctx.fillStyle = 'white';
+                    ctx.fillRect(0, 0, totalWidth, totalHeight);
+
+                    const svgData = new XMLSerializer().serializeToString(svgClone);
+                    const img = new Image();
+                    img.onload = () => {
+                        ctx.drawImage(img, 0, 0);
+                        canvas.toBlob(blob => {
+                            if (!blob) throw new Error('WebP generation failed');
+                            const url = URL.createObjectURL(blob);
+                            Utils.downloadFile(url, 'mermaid-diagram.webp');
+                            Utils.showSuccessToast('WebP exported successfully!');
+                        }, 'image/webp', 0.95);
+                    };
+                    img.src = 'data:image/svg+xml;base64,' + btoa(svgData);
+                } catch (error) {
+                    Utils.handleExportError(error, 'WebP');
+                }
+            }
+
+            async exportTrueSizePDF() {
+                try {
+                    const svgElement = Utils.getSVGElement();
+                    if (!svgElement) {
+                        throw new Error('No diagram found to export');
+                    }
+
+                    const padding = Utils.getPadding();
+                    // Detect pie charts (mermaid adds specific structure/classes)
+                    const isPie = !!(svgElement.querySelector('[class*="pie"]') || svgElement.querySelector('[id*="pie"]') || /pie/i.test(svgElement.textContent.slice(0,200)));
+
+                    let svgClone, totalWidth, totalHeight;
+                    if (isPie) {
+                        // Lightweight clone path to avoid prepareSVGForExport() forcing black text / stripping classes
+                        const bbox = svgElement.getBBox();
+                        totalWidth = bbox.width + padding * 2;
+                        totalHeight = bbox.height + padding * 2;
+                        svgClone = svgElement.cloneNode(true);
+                        svgClone.setAttribute('width', totalWidth);
+                        svgClone.setAttribute('height', totalHeight);
+                        svgClone.setAttribute('viewBox', `${bbox.x - padding} ${bbox.y - padding} ${totalWidth} ${totalHeight}`);
+                        svgClone.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+                        svgClone.setAttribute('xmlns:xlink', 'http://www.w3.org/1999/xlink');
+                        // Inline styles (adds fill/stroke/font + we'll add text-anchor explicitly)
+                        Utils.inlineStyles(svgClone);
+                        // Ensure each text has explicit text-anchor & x attribute preserved (PDF libs sometimes drop CSS-based text-anchor)
+                        const tempWrap = document.createElement('div');
+                        tempWrap.style.position = 'absolute';
+                        tempWrap.style.left = '-99999px';
+                        document.body.appendChild(tempWrap);
+                        tempWrap.appendChild(svgClone);
+                        svgClone.querySelectorAll('text').forEach(t => {
+                            const cs = window.getComputedStyle(t);
+                            const ta = cs.textAnchor || cs.getPropertyValue('text-anchor');
+                            if (ta && !t.getAttribute('text-anchor')) t.setAttribute('text-anchor', ta);
+                        });
+                        document.body.removeChild(tempWrap);
+                    } else {
+                        // Use existing utility for non-pie diagrams
+                        const prep = Utils.prepareSVGForExport(svgElement, padding);
+                        svgClone = prep.svgClone;
+                        totalWidth = prep.totalWidth;
+                        totalHeight = prep.totalHeight;
+                    }
+
+                    // Try PDFKit + svg-to-pdfkit first (best arrow/marker support)
+                    if (window.PDFDocument && window.SVGtoPDF) {
+                        console.log('✅ Using PDFKit + svg-to-pdfkit for optimal arrow rendering');
+                        // Convert SVG to string for PDFKit processing
+                        const svgData = new XMLSerializer().serializeToString(svgClone);
+                        
+                        // Create PDF document with exact dimensions
+                        const doc = new window.PDFDocument({ 
+                            size: [totalWidth, totalHeight], 
+                            margin: 0 
+                        });
+                        
+                        // Paint white background explicitly 
+                        doc.save();
+                        doc.rect(0, 0, totalWidth, totalHeight).fill('#ffffff');
+                        doc.restore();
+
+                        // Collect PDF data
+                        const chunks = [];
+                        doc.on('data', chunk => chunks.push(chunk));
+                        doc.on('end', () => {
+                            const pdfBlob = new Blob(chunks, { type: 'application/pdf' });
+                            const url = URL.createObjectURL(pdfBlob);
+                            const a = document.createElement('a');
+                            a.href = url;
+                            a.download = 'mermaid-diagram-vector.pdf';
+                            document.body.appendChild(a);
+                            a.click();
+                            document.body.removeChild(a);
+                            URL.revokeObjectURL(url);
+                            Utils.showSuccessToast('Vector PDF with perfect arrows exported successfully!');
+                        });
+
+                        // Convert SVG to PDF using svg-to-pdfkit (preserves markers/arrows and colors)
+                        window.SVGtoPDF(doc, svgData, 0, 0, {
+                            width: totalWidth,
+                            height: totalHeight,
+                            preserveAspectRatio: 'xMidYMid meet',
+                            useCSS: false, // using SVG string, not DOM element
+                            assumePt: true,
+                            fontCallback: () => 'Helvetica'
+                        });
+
+                        doc.end();
+                        return;
+                    }
+
+                    // Fallback to jsPDF + svg2pdf
+                    if (!window.jsPDF) {
+                        throw new Error('No PDF library loaded');
+                    }
+
+                    // Create PDF with exact dimensions
+                    const widthMm = totalWidth * 0.264583;
+                    const heightMm = totalHeight * 0.264583;
+                    const pdf = new window.jsPDF({
+                        orientation: widthMm > heightMm ? 'landscape' : 'portrait',
+                        unit: 'mm',
+                        format: [widthMm, heightMm]
+                    });
+
+                    // Use svg2pdf for vector PDF conversion
+                    if (window.svg2pdf && typeof window.svg2pdf === 'function') {
+                        console.log('✅ Creating vector PDF using svg2pdf()');
+                        
+                        // Add white background for PDF
+                        pdf.setFillColor(255, 255, 255);
+                        pdf.rect(0, 0, widthMm, heightMm, 'F');
+                        
+                        await window.svg2pdf(svgClone, pdf, {
+                            x: 0,
+                            y: 0,
+                            width: widthMm,
+                            height: heightMm,
+                            preserveAspectRatio: 'xMidYMid meet'
+                        });
+                        
+                        pdf.save('mermaid-diagram.pdf');
+                        Utils.showSuccessToast('Vector PDF exported successfully!');
+                        return;
+                    }
+
+                    throw new Error('Vector PDF functionality not available. Please ensure svg2pdf library is loaded.');
+
+                } catch (error) {
+                    console.error('Vector PDF export error:', error);
+                    Utils.handleExportError(error, 'PDF');
+                }
+            }
+        }
+        
+        // Global instance for backward compatibility with onclick handlers
+        let diagramCrafter = null;
+        
+        // Export functions (global scope for onclick handlers)
+        function exportSVG() {
+            if (diagramCrafter) {
+                diagramCrafter.exportSVG();
+            }
+        }
+        
+        function exportPNG() {
+            if (diagramCrafter) {
+                diagramCrafter.exportPNG();
+            }
+        }
+
+        function exportWEBP() {
+            if (diagramCrafter && typeof diagramCrafter.exportWEBP === 'function') {
+                diagramCrafter.exportWEBP();
+            }
+        }
+        
+        function exportTrueSizePDF() {
+            // Check if diagramCrafter is initialized
+            if (diagramCrafter && typeof diagramCrafter.exportTrueSizePDF === 'function') {
+                return diagramCrafter.exportTrueSizePDF();
+            }
+            
+            // If not, try to initialize it first
+            if (typeof MermaidDiagramCrafter === 'function' && !diagramCrafter) {
+                console.log('⚠️ diagramCrafter not initialized, attempting to initialize...');
+                try {
+                    diagramCrafter = new MermaidDiagramCrafter();
+                    return diagramCrafter.exportTrueSizePDF();
+                } catch (e) {
+                    console.error('Failed to initialize diagramCrafter:', e);
+                }
+            }
+            
+            alert('PDF export function not yet available. Please wait for all libraries to finish loading and try again.');
+        }
+        
+        // Legacy export function for backward compatibility
+        // ============================================================================
+        // Utility Functions
+        // ============================================================================
+        
+        const Utils = {
+            showSuccessToast(message) {
+                const toast = document.createElement('div');
+                toast.className = 'success-toast';
+                toast.textContent = message;
+                document.body.appendChild(toast);
+                
+                setTimeout(() => {
+                    toast.remove();
+                }, 3000);
+            },
+            
+            showLoadingState(button, isLoading = true) {
+                if (isLoading) {
+                    button.innerHTML = '<span class="loading-spinner"></span>' + button.textContent;
+                    button.classList.add('btn-loading');
+                } else {
+                    button.innerHTML = button.textContent.replace(/^.*?([^>]*?)$/, '$1');
+                    button.classList.remove('btn-loading');
+                }
+            },
+            
+            downloadFile(url, filename) {
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = filename;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                if (url.startsWith('blob:')) {
+                    URL.revokeObjectURL(url);
+                }
+            },
+            
+            getPadding() {
+                return parseInt(document.getElementById('exportPadding').value) || 0;
+            },
+            
+            getSVGElement() {
+                // Try multiple possible locations for the SVG
+                let svg = document.querySelector('#output svg');
+                if (!svg) {
+                    svg = document.querySelector('#output .mermaid svg');
+                }
+                if (!svg) {
+                    svg = document.querySelector('.mermaid svg');
+                }
+                if (!svg) {
+                    svg = document.querySelector('svg');
+                }
+                
+                console.log('🔍 getSVGElement found SVG:', !!svg);
+                if (svg) {
+                    console.log('SVG location:', svg.closest('#output') ? '#output' : svg.closest('.mermaid') ? '.mermaid' : 'other');
+                    
+                    // Deep dive into SVG content
+                    const allElements = svg.querySelectorAll('*');
+                    const textElements = svg.querySelectorAll('text, tspan');
+                    const groupElements = svg.querySelectorAll('g');
+                    const rectElements = svg.querySelectorAll('rect');
+                    
+                    console.log('SVG analysis:', {
+                        totalElements: allElements.length,
+                        textElements: textElements.length,
+                        groupElements: groupElements.length,
+                        rectElements: rectElements.length,
+                        svgWidth: svg.getAttribute('width'),
+                        svgHeight: svg.getAttribute('height'),
+                        viewBox: svg.getAttribute('viewBox')
+                    });
+                    
+                    // If no text elements, check if it's still rendering
+                    if (textElements.length === 0) {
+                        console.log('⚠️ No text elements found. SVG innerHTML preview:', svg.innerHTML.substring(0, 500));
+                        console.log('SVG classes:', svg.className);
+                        console.log('Parent element:', svg.parentElement);
+                        
+                        // Check if Mermaid is still processing
+                        const mermaidElements = document.querySelectorAll('.mermaid');
+                        mermaidElements.forEach((el, i) => {
+                            console.log(`Mermaid element ${i}:`, {
+                                innerHTML: el.innerHTML.substring(0, 200),
+                                dataProcessed: el.getAttribute('data-processed'),
+                                className: el.className
+                            });
+                        });
+                    } else {
+                        // Log details of found text elements
+                        textElements.forEach((text, i) => {
+                            console.log(`Text element ${i}:`, {
+                                content: text.textContent?.trim(),
+                                attributes: {
+                                    class: text.getAttribute('class'),
+                                    style: text.getAttribute('style'),
+                                    fill: text.getAttribute('fill'),
+                                    x: text.getAttribute('x'),
+                                    y: text.getAttribute('y')
+                                },
+                                computedStyle: {
+                                    visibility: window.getComputedStyle(text).visibility,
+                                    display: window.getComputedStyle(text).display,
+                                    opacity: window.getComputedStyle(text).opacity,
+                                    fill: window.getComputedStyle(text).fill
+                                }
+                            });
+                        });
+                    }
+                }
+                
+                return svg;
+            },
+            
+            prepareSVGForExport(svgElement, padding = null) {
+                if (padding === null) padding = this.getPadding();
+                
+                // Always use getBBox for true content size
+                const bbox = svgElement.getBBox();
+                const totalWidth = bbox.width + (padding * 2);
+                const totalHeight = bbox.height + (padding * 2);
+                const svgClone = svgElement.cloneNode(true);
+                
+                svgClone.setAttribute('width', totalWidth);
+                svgClone.setAttribute('height', totalHeight);
+                svgClone.setAttribute('viewBox', `${bbox.x - padding} ${bbox.y - padding} ${totalWidth} ${totalHeight}`);
+                
+                // Ensure proper namespace
+                svgClone.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+                svgClone.setAttribute('xmlns:xlink', 'http://www.w3.org/1999/xlink');
+                
+                // Convert any remaining foreignObject elements to text (critical for PDF export)
+                this.replaceForeignObjectsWithText(svgClone);
+                
+                // Inline computed styles so they're preserved in PDF
+                this.inlineStyles(svgClone);
+                // Sanitize any invalid stroke-dasharray patterns that PDF libs reject
+                this.sanitizeStrokeDashArrays(svgClone);
+                // Convert embedded newlines to tspans to preserve line breaks in PDF
+                this.ensureMultilineText(svgClone);
+                // Normalize tspans to have absolute y positions (some PDF libs ignore dy)
+                this.normalizeTspansForPDF(svgClone);
+                
+                // Fix for missing text: force all text to black and inherit font
+                svgClone.querySelectorAll('text, tspan').forEach(t => {
+                    if (!t.getAttribute('fill') || t.getAttribute('fill') === 'none') {
+                        t.setAttribute('fill', 'black');
+                    }
+                    if (!t.getAttribute('font-family')) {
+                        t.setAttribute('font-family', 'Arial, sans-serif');
+                    }
+                    if (!t.getAttribute('font-size')) {
+                        t.setAttribute('font-size', '14');
+                    }
+                    t.removeAttribute('class');
+                });
+                
+                console.log(`📊 Export ready: ${svgClone.querySelectorAll('text, tspan').length} text elements`);
+                
+                return { svgClone, bbox, totalWidth, totalHeight };
+            },
+
+            // Helper: convert any remaining foreignObject labels (if present) into plain <text>
+            replaceForeignObjectsWithText(svgRoot) {
+                const foreignObjects = svgRoot.querySelectorAll('foreignObject');
+                if (!foreignObjects.length) return; // nothing to do
+                foreignObjects.forEach(fo => {
+                    try {
+                        const width = parseFloat(fo.getAttribute('width')) || 0;
+                        const height = parseFloat(fo.getAttribute('height')) || 0;
+                        const x = parseFloat(fo.getAttribute('x')) || 0;
+                        const y = parseFloat(fo.getAttribute('y')) || 0;
+                        // Use innerHTML to preserve <br> — treat <p> & <span> as potential containers
+                        let html = fo.innerHTML;
+                        html = html.replace(/<\/?(p|span)[^>]*>/gi, '').replace(/<br\s*\/?>/gi, '\n');
+                        const raw = html.replace(/<[^>]+>/g, '');
+                        const lines = raw.split(/\n/).map(l => l.trim()).filter(Boolean);
+                        if (!lines.length) { fo.remove(); return; }
+                        const fontSize = 14; // fallback; could be enhanced by parsing style
+                        const lineHeight = Math.round(fontSize * 1.25); // slightly looser for readability
+                        const centerX = x + width / 2;
+                        // Vertically center block inside original rectangle
+                        const blockHeight = lines.length * lineHeight;
+                        // Baseline adjustment: shift first line baseline ~0.8*fontSize below start
+                        let currentY = y + (height - blockHeight)/2 + fontSize * 0.85;
+                        const textEl = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                        textEl.setAttribute('font-family', 'Arial, sans-serif');
+                        textEl.setAttribute('font-size', '14');
+                        textEl.setAttribute('fill', 'black');
+                        textEl.setAttribute('text-anchor', 'middle');
+                        lines.forEach((line, idx) => {
+                            const tspan = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
+                            tspan.setAttribute('x', centerX);
+                            tspan.setAttribute('y', (currentY + idx * lineHeight).toString());
+                            tspan.textContent = line;
+                            textEl.appendChild(tspan);
+                        });
+                        fo.parentNode.insertBefore(textEl, fo);
+                        fo.remove();
+                    } catch (e) {
+                        console.warn('foreignObject conversion failed', e);
+                    }
+                });
+            },
+
+            // Helper: inline computed styles for shapes/edges so pdf conversion preserves colors & strokes
+            inlineStyles(svgRoot) {
+                // Attach clone off-screen (if not already in DOM) to compute styles reliably
+                let tempWrapper;
+                if (!document.body.contains(svgRoot)) {
+                    tempWrapper = document.createElement('div');
+                    tempWrapper.style.position = 'absolute';
+                    tempWrapper.style.left = '-99999px';
+                    tempWrapper.style.top = '0';
+                    tempWrapper.appendChild(svgRoot);
+                    document.body.appendChild(tempWrapper);
+                }
+                const selector = 'rect,circle,ellipse,path,polygon,polyline,line,text,tspan,marker path';
+                svgRoot.querySelectorAll(selector).forEach(el => {
+                    const cs = window.getComputedStyle(el);
+                    const tag = el.tagName.toLowerCase();
+                    const fill = cs.fill;
+                    const stroke = cs.stroke;
+                    const strokeWidth = cs.strokeWidth;
+                    if (fill && fill !== 'none') el.setAttribute('fill', fill);
+                    else if (tag !== 'text' && tag !== 'tspan') el.setAttribute('fill', 'none');
+                    if (stroke && stroke !== 'none') el.setAttribute('stroke', stroke);
+                    if (strokeWidth && parseFloat(strokeWidth) > 0) el.setAttribute('stroke-width', strokeWidth);
+                    // Text specifics
+                    if (tag === 'text' || tag === 'tspan') {
+                        if (cs.fontFamily) el.setAttribute('font-family', cs.fontFamily.replace(/"/g,'').split(',').slice(0,2).join(','));
+                        if (cs.fontSize) el.setAttribute('font-size', parseFloat(cs.fontSize));
+                        if (!el.getAttribute('fill') || el.getAttribute('fill') === 'none') el.setAttribute('fill', stroke && stroke !== 'none' ? stroke : '#000');
+                        const ta = cs.textAnchor || cs.getPropertyValue('text-anchor');
+                        if (ta && !el.getAttribute('text-anchor')) el.setAttribute('text-anchor', ta);
+                    }
+                });
+                if (tempWrapper) {
+                    document.body.removeChild(tempWrapper);
+                }
+            },
+
+            // Remove or fix invalid stroke-dasharray patterns like "1,0" that trigger PDF export errors
+            sanitizeStrokeDashArrays(svgRoot) {
+                const fixPattern = (pattern) => {
+                    if (!pattern) return null;
+                    // Split numbers
+                    const nums = pattern.split(/[ ,]+/).filter(Boolean).map(n => parseFloat(n));
+                    if (!nums.length) return null;
+                    // Keep only positive numbers > 0
+                    const cleaned = nums.filter(n => isFinite(n) && n > 0);
+                    if (cleaned.length < 2) return null; // single value or empty -> treat as solid
+                    return cleaned.join(' ');
+                };
+                svgRoot.querySelectorAll('[stroke-dasharray], [style*="stroke-dasharray"]').forEach(el => {
+                    // Attribute form
+                    if (el.hasAttribute('stroke-dasharray')) {
+                        const fixed = fixPattern(el.getAttribute('stroke-dasharray'));
+                        if (fixed) el.setAttribute('stroke-dasharray', fixed); else el.removeAttribute('stroke-dasharray');
+                    }
+                    // Inline style form
+                    const styleVal = el.getAttribute('style');
+                    if (styleVal && /stroke-dasharray/i.test(styleVal)) {
+                        const m = styleVal.match(/stroke-dasharray\s*:\s*([^;]+)/i);
+                        if (m) {
+                            const fixed = fixPattern(m[1]);
+                            let newStyle = styleVal.replace(/stroke-dasharray\s*:[^;]+;?/i, '');
+                            if (fixed) {
+                                // Append normalized value
+                                newStyle = newStyle.trim().replace(/;?$/, ';') + `stroke-dasharray:${fixed};`;
+                            }
+                            if (newStyle.trim()) el.setAttribute('style', newStyle); else el.removeAttribute('style');
+                        }
+                    }
+                });
+            },
+
+            // Ensure multi-line text renders properly in PDF by turning raw newlines into <tspan> elements
+            ensureMultilineText(svgRoot) {
+                const ns = 'http://www.w3.org/2000/svg';
+                svgRoot.querySelectorAll('text').forEach(textEl => {
+                    // Skip if already using tspans for multiple lines
+                    if (textEl.querySelector('tspan')) return; // existing tspans handled later by normalizeTspansForPDF
+                    const raw = textEl.textContent;
+                    if (!raw || raw.indexOf('\n') === -1) return;
+                    const xBase = textEl.getAttribute('x') || '0';
+                    const yBase = textEl.getAttribute('y') || '0';
+                    const lines = raw.split(/\n/);
+                    // Clear existing
+                    while (textEl.firstChild) textEl.removeChild(textEl.firstChild);
+                    lines.forEach((line, idx) => {
+                        const tspan = document.createElementNS(ns, 'tspan');
+                        tspan.textContent = line;
+                        tspan.setAttribute('x', xBase);
+                        if (idx === 0) {
+                            tspan.setAttribute('y', yBase);
+                        } else {
+                            // dy relative line spacing (1.2em for readability)
+                            tspan.setAttribute('dy', '1.2em');
+                        }
+                        textEl.appendChild(tspan);
+                    });
+                });
+            },
+
+            // Convert relative dy-based tspans into absolute y-based tspans for reliable PDF rendering
+            normalizeTspansForPDF(svgRoot) {
+                svgRoot.querySelectorAll('text').forEach(textEl => {
+                    const tspans = Array.from(textEl.querySelectorAll('tspan'));
+                    if (tspans.length <= 1) return; // nothing to do
+                    // Determine base x & y
+                    const baseX = textEl.getAttribute('x') || tspans[0].getAttribute('x') || '0';
+                    let baseY = textEl.getAttribute('y') || tspans[0].getAttribute('y');
+                    if (!baseY) {
+                        // Fallback: attempt to parse first tspan dy relative to parent y
+                        baseY = '0';
+                    }
+                    // Font size (fallback 14)
+                    let fs = parseFloat(textEl.getAttribute('font-size'));
+                    if (!fs || isNaN(fs)) {
+                        const cs = window.getComputedStyle(textEl);
+                        fs = parseFloat(cs.fontSize) || 14;
+                    }
+                    const lineHeight = fs * 1.2; // 1.2em spacing
+                    tspans.forEach((tspan, idx) => {
+                        tspan.setAttribute('x', baseX);
+                        tspan.setAttribute('y', (parseFloat(baseY) + idx * lineHeight).toString());
+                        tspan.removeAttribute('dy');
+                    });
+                });
+            },
+            // Expand a multi-line <text> element (with multiple tspans) into separate <text> siblings (one per line)
+            expandMultilineText(svgRoot) {
+                const toInsert = [];
+                const toRemove = [];
+                svgRoot.querySelectorAll('text').forEach(textEl => {
+                    const tspans = textEl.querySelectorAll('tspan');
+                    if (tspans.length <= 1) return;
+                    // Capture shared attributes (excluding x,y which become line-specific)
+                    const shared = {};
+                    for (const attr of textEl.attributes) {
+                        if (!['x','y'].includes(attr.name)) shared[attr.name] = attr.value;
+                    }
+                    tspans.forEach(ts => {
+                        const line = ts.textContent;
+                        if (!line) return;
+                        const newText = document.createElementNS('http://www.w3.org/2000/svg','text');
+                        Object.entries(shared).forEach(([k,v]) => newText.setAttribute(k,v));
+                        const x = ts.getAttribute('x') || textEl.getAttribute('x') || '0';
+                        const y = ts.getAttribute('y') || textEl.getAttribute('y') || '0';
+                        newText.setAttribute('x', x);
+                        newText.setAttribute('y', y);
+                        newText.textContent = line;
+                        toInsert.push({ ref: textEl, node: newText });
+                    });
+                    toRemove.push(textEl);
+                });
+                toInsert.forEach(({ref,node}) => ref.parentNode.insertBefore(node, ref.nextSibling));
+                toRemove.forEach(n => n.parentNode.removeChild(n));
+            },
+            
+            handleExportError(error, type) {
+                console.error(`${type} export error:`, error);
+                const errorDiv = document.getElementById('error');
+                if (errorDiv) {
+                    errorDiv.innerHTML = `❌ Error exporting ${type}: ${error.message}`;
+                }
+            }
+        };
+        
+        // Clear saved diagram data
+        function clearSavedData() {
+            if (confirm('Clear saved diagram? This will reset to the default flowchart.')) {
+                localStorage.removeItem('mermaid-diagram-code');
+                // Reset to default flowchart
+                const defaultDiagram = `flowchart TD
+    A[Start] --> B{Decision}
+    B -->|Yes| C[Process 1]
+    B -->|No| D[Process 2]
+    C --> E[End]
+    D --> E`;
+                document.getElementById('input').value = defaultDiagram;
+                if (typeof updateTypeIndicator === 'function') {
+                    updateTypeIndicator(defaultDiagram);
+                }
+                
+                // Multiple approaches to force re-render
+                console.log('Attempting to clear and re-render...');
+                
+                // Approach 1: Trigger input event
+                const inputElement = document.getElementById('input');
+                if (inputElement) {
+                    const event = new Event('input', { bubbles: true });
+                    inputElement.dispatchEvent(event);
+                }
+                
+                // Approach 2: Direct render call with delay
+                setTimeout(() => {
+                    if (typeof renderDiagram === 'function') {
+                        renderDiagram();
+                    }
+                }, 100);
+                
+                // Approach 3: Manual mermaid render as fallback
+                setTimeout(async () => {
+                    try {
+                        const output = document.getElementById('output');
+                        const errorDiv = document.getElementById('error');
+                        if (output && typeof mermaid !== 'undefined') {
+                            output.innerHTML = '';
+                            if (errorDiv) errorDiv.innerHTML = '';
+                            
+                            const uniqueId = 'clear-' + Date.now();
+                            const { svg } = await mermaid.render(uniqueId, defaultDiagram);
+                            output.innerHTML = svg;
+                            console.log('Manual render successful');
+                        }
+                    } catch (e) {
+                        console.error('Manual render failed:', e);
+                    }
+                }, 200);
+                
+                if (typeof Utils !== 'undefined' && typeof Utils.showToast === 'function') {
+                    Utils.showToast('Saved data cleared! Reset to default diagram.', 'success');
+                } else {
+                    console.log('Saved data cleared! Reset to default diagram.');
+                }
+            }
+        }
+        
+        // Enhanced initialization
+        function initializeApp() {
+            // Force clear any cached data first
+            localStorage.removeItem('mermaid-diagram-code');
+            console.log('Cleared localStorage');
+            
+            // Initialize Mermaid with theme support
+            initializeMermaidWithTheme('default');
+
+            // Register icon packs for additional icon support
+            if (mermaid.registerIconPacks) {
+                const withFallback = (localPath, cdn) => fetch(localPath).then(r => {
+                    if(!r.ok) throw new Error('Local missing');
+                    return r.json();
+                }).catch(()=> fetch(cdn).then(r=>r.json()));
+                mermaid.registerIconPacks([
+                    { name: 'logos', loader: () => withFallback('libs/iconify/logos.json','https://unpkg.com/@iconify-json/logos@1/icons.json') },
+                    { name: 'fa', loader: () => withFallback('libs/iconify/fa.json','https://unpkg.com/@iconify-json/fa@1/icons.json') },
+                    { name: 'mdi', loader: () => withFallback('libs/iconify/mdi.json','https://unpkg.com/@iconify-json/mdi@1/icons.json') }
+                ]);
+                console.log('✅ Icon packs registered (local-first): logos, fa, mdi');
+            } else {
+                console.warn('⚠️ registerIconPacks not available in this Mermaid version');
+            }
+        
+        // Setup theme selector event listener
+        setupThemeSelector();
+        
+        // Initialize the diagram crafter
+        diagramCrafter = new MermaidDiagramCrafter();
+        
+        // ============================================================================
+        // Theme Support Functions
+        // ============================================================================
+        
+        function initializeMermaidWithTheme(theme = 'default') {
+            const config = {
+                startOnLoad: false, 
+                securityLevel: 'loose',
+                fontFamily: 'inherit',
+                theme: theme,
+                flowchart: {
+                    useMaxWidth: true,
+                    htmlLabels: false  // Critical for PDF text export - use pure SVG text elements
+                },
+                sequence: { 
+                    useMaxWidth: false,
+                    htmlLabels: false 
+                },
+                gantt: { 
+                    useMaxWidth: false 
+                },
+                er: {
+                    htmlLabels: false
+                },
+                classDiagram: {
+                    htmlLabels: false
+                },
+                sankey: {
+                    width: 800,
+                    height: 400,
+                    linkColor: 'gradient',
+                    nodeAlignment: 'justify',
+                    showValues: true
+                },
+                themeCSS: `
+                    .nodeLabel { font-family: inherit; }
+                    .node .label { font-family: inherit; }
+                    .edgeLabel { font-family: inherit; }
+                `
+            };
+            
+            // Theme-specific configurations
+            switch(theme) {
+                case 'dark':
+                    config.themeVariables = {
+                        primaryColor: '#4a90e2',
+                        primaryTextColor: '#ffffff',
+                        primaryBorderColor: '#6b9bd2',
+                        lineColor: '#cccccc',
+                        sectionBkgColor: '#2d3748',
+                        altSectionBkgColor: '#1a202c',
+                        gridColor: '#4a5568',
+                        secondaryColor: '#a0aec0',
+                        tertiaryColor: '#2d3748'
+                    };
+                    break;
+                case 'forest':
+                    config.themeVariables = {
+                        primaryColor: '#00b894',
+                        primaryTextColor: '#ffffff',
+                        primaryBorderColor: '#00a085',
+                        lineColor: '#2d3436',
+                        sectionBkgColor: '#dff0d8',
+                        altSectionBkgColor: '#c8e6c9',
+                        gridColor: '#81c784',
+                        secondaryColor: '#74b9ff',
+                        tertiaryColor: '#fdcb6e'
+                    };
+                    break;
+                case 'neutral':
+                    config.themeVariables = {
+                        primaryColor: '#636e72',
+                        primaryTextColor: '#ffffff',
+                        primaryBorderColor: '#2d3436',
+                        lineColor: '#636e72',
+                        sectionBkgColor: '#f8f9fa',
+                        altSectionBkgColor: '#e9ecef',
+                        gridColor: '#adb5bd',
+                        secondaryColor: '#74b9ff',
+                        tertiaryColor: '#fd79a8'
+                    };
+                    break;
+                case 'base':
+                    config.themeVariables = {
+                        primaryColor: '#fff2cc',
+                        primaryTextColor: '#333333',
+                        primaryBorderColor: '#d6b656',
+                        lineColor: '#333333',
+                        sectionBkgColor: '#fff2cc',
+                        altSectionBkgColor: '#ffeaa7',
+                        gridColor: '#e17055',
+                        secondaryColor: '#ffe8cc',
+                        tertiaryColor: '#f0f0f0'
+                    };
+                    break;
+                default:
+                    // Default theme - no custom variables needed
+                    break;
+            }
+            
+            mermaid.initialize(config);
+            console.log(`✅ Mermaid initialized with ${theme} theme`);
+        }
+        
+        function setupThemeSelector() {
+            const themeSelect = document.getElementById('themeSelect');
+            if (themeSelect) {
+                // Load saved theme preference
+                const savedTheme = localStorage.getItem('mermaid-theme') || 'default';
+                themeSelect.value = savedTheme;
+                
+                themeSelect.addEventListener('change', (e) => {
+                    const selectedTheme = e.target.value;
+                    changeTheme(selectedTheme);
+                    localStorage.setItem('mermaid-theme', selectedTheme);
+                    Utils.showSuccessToast(`🎨 Theme changed to ${selectedTheme}!`);
+                });
+            }
+        }
+        
+        // (Removed legacy exportVectorPDF & duplicate exportTrueSizePDF implementations.)
+        // The single authoritative exportTrueSizePDF now lives earlier in the file and uses jsPDF + svg2pdf.
+        
+        function changeTheme(theme) {
+            console.log(`Changing theme to: ${theme}`);
+            
+            // Reinitialize Mermaid with new theme
+            initializeMermaidWithTheme(theme);
+            
+            // Re-render the current diagram with new theme
+            setTimeout(() => {
+                renderDiagram();
+            }, 100);
+        }
+
+
+        async function renderDiagram() {
+            const input = document.getElementById('input').value;
+            const output = document.getElementById('output');
+            const errorDiv = document.getElementById('error');
+            
+            // Extract and handle YAML frontmatter with config
+            let cleanInput = input;
+            let mermaidConfig = {};
+            
+            // Check for YAML frontmatter
+            if (input.trim().startsWith('---')) {
+                const yamlMatch = input.match(/^---\n([\s\S]*?)\n---\s*([\s\S]*)$/);
+                if (yamlMatch) {
+                    const yamlContent = yamlMatch[1];
+                    cleanInput = yamlMatch[2].trim();
+                    
+                    // Try to extract config from YAML (basic parsing)
+                    if (yamlContent.includes('config:')) {
+                        try {
+                            // Simple config extraction - you might want to use a proper YAML parser
+                            const configMatch = yamlContent.match(/config:\s*([\s\S]*?)(?=\n\w|$)/);
+                            if (configMatch) {
+                                // For now, we'll just pass the config to mermaid's initialize
+                                // This is a simplified approach
+                            }
+                        } catch (e) {
+                            console.log('Could not parse config from YAML');
+                        }
+                    }
+                }
+            }
+            
+            const detectedType = detectDiagramType(input);
+            
+            output.innerHTML = '';
+            errorDiv.innerHTML = '';
+
+            console.log('Attempting to render diagram');
+            console.log('Detected type:', detectedType);
+            console.log('Clean input:', cleanInput);
+            
+            // Check if the input already contains a complete diagram declaration
+            let finalInput;
+            const firstLine = cleanInput.split('\n')[0].trim();
+            
+            if (firstLine.startsWith('C4Context') || firstLine.startsWith('C4Container') ||
+                firstLine.startsWith('C4Component') || firstLine.startsWith('C4Dynamic') ||
+                firstLine.startsWith('C4Deployment') || firstLine.startsWith('graph ') || 
+                firstLine.startsWith('flowchart ') || firstLine.startsWith('sequenceDiagram') || 
+                firstLine.startsWith('classDiagram') || firstLine.startsWith('stateDiagram') || 
+                firstLine.startsWith('sankey-beta') || firstLine.startsWith('gantt') || firstLine.startsWith('pie') || 
+                firstLine.startsWith('erDiagram') || firstLine.startsWith('journey') || 
+                firstLine.startsWith('requirementDiagram') || firstLine.startsWith('gitGraph') || 
+                firstLine.startsWith('mindmap') || firstLine.startsWith('timeline') || 
+                firstLine.startsWith('quadrantChart') || firstLine.startsWith('zenuml')) {
+                
+                // Input already has diagram type, use as-is
+                finalInput = cleanInput;
+                console.log('Using input as-is, type detected:', firstLine.split(' ')[0] || firstLine.split('\n')[0]);
+            } else {
+                // Add detected type if missing
+                finalInput = `${detectedType}\n${cleanInput}`;
+                console.log('Adding detected type:', detectedType);
+            }
+            
+            console.log('Final input:', finalInput);
+            
+            try {
+                mermaid.parse(finalInput); // Throws if invalid
+                output.innerHTML = `<div class=\"mermaid\">${finalInput}</div>`;
+                await mermaid.init(undefined, output.querySelectorAll('.mermaid'));
+            } catch (error) {
+                console.error('Mermaid rendering error:', error);
+                
+                // Check if it's a ZenUML error and show both default error diagram AND custom message
+                if (finalInput.trim().startsWith('zenuml') || error.message?.includes('zenuml')) {
+                    // Let Mermaid show its default error diagram first
+                    try {
+                        output.innerHTML = `<div class=\"mermaid\">${finalInput}</div>`;
+                        await mermaid.init(undefined, output.querySelectorAll('.mermaid'));
+                    } catch (e) {
+                        // If init also fails, just show the error content
+                        console.log('Mermaid init failed, showing default error');
+                    }
+                    
+                    // Always show our custom ZenUML error message
+                    setTimeout(() => {
+                        errorDiv.innerHTML = `
+                            <div class="error" style="margin-top: 20px; padding: 15px; background-color: #ffebee; border: 1px solid #f44336; border-radius: 5px; color: #d32f2f;">
+                                <strong>⚠️ ZenUML Not Supported</strong><br>
+                                ZenUML diagrams are not supported in the current Mermaid version.<br><br>
+                                <strong>Alternative:</strong> Use standard sequence diagrams instead:<br>
+                                <pre style="background: #f5f5f5; padding: 10px; border-radius: 3px; margin-top: 10px;"><code>sequenceDiagram
+    title Demo
+    participant Alice
+    participant John
+    Alice->>John: Hello John, how are you?
+    John->>Alice: Great!
+    Alice->>John: See you later!</code></pre>
+                            </div>
+                        `;
+                    }, 100); // Small delay to ensure it shows after Mermaid rendering
+                } else {
+                    // For other errors, use the general error handling
+                    const friendlyMessage = getDetailedErrorMessage(error, input);
+                    errorDiv.innerHTML = friendlyMessage;
+                }
+            }
+        }
+
+        // Auto-detect diagram type and update indicator
+        const inputArea = document.getElementById('input');
+        const typeIndicator = document.getElementById('diagramTypeIndicator');
+        const typeMap = [
+            { key: 'C4Context', value: 'C4Context', name: 'C4 Context Diagram' },
+            { key: 'C4Container', value: 'C4Container', name: 'C4 Container Diagram' },
+            { key: 'C4Component', value: 'C4Component', name: 'C4 Component Diagram' },
+            { key: 'C4Dynamic', value: 'C4Dynamic', name: 'C4 Dynamic Diagram' },
+            { key: 'C4Deployment', value: 'C4Deployment', name: 'C4 Deployment Diagram' },
+            { key: 'flowchart TB', value: 'flowchart TB', name: 'Flowchart (Top-Bottom)' },
+            { key: 'flowchart TD', value: 'flowchart TD', name: 'Flowchart (Top-Down)' },
+            { key: 'flowchart LR', value: 'flowchart LR', name: 'Flowchart (Left-Right)' },
+            { key: 'graph TD', value: 'graph TD', name: 'Flowchart (Top-Down)' },
+            { key: 'graph LR', value: 'graph LR', name: 'Flowchart (Left-Right)' },
+            { key: 'sequenceDiagram', value: 'sequenceDiagram', name: 'Sequence Diagram' },
+            { key: 'classDiagram', value: 'classDiagram', name: 'Class Diagram' },
+            { key: 'stateDiagram-v2', value: 'stateDiagram-v2', name: 'State Diagram' },
+            { key: 'gantt', value: 'gantt', name: 'Gantt Chart' },
+            { key: 'pie showData', value: 'pie showData', name: 'Pie Chart (with data)' },
+            { key: 'pie', value: 'pie', name: 'Pie Chart' },
+            { key: 'erDiagram', value: 'erDiagram', name: 'ER Diagram' },
+            { key: 'journey', value: 'journey', name: 'Journey Diagram' },
+            { key: 'requirementDiagram', value: 'requirementDiagram', name: 'Requirement Diagram' },
+            { key: 'gitGraph', value: 'gitGraph', name: 'Git Graph' },
+            { key: 'mindmap', value: 'mindmap', name: 'Mindmap' },
+            { key: 'timeline', value: 'timeline', name: 'Timeline' },
+            { key: 'quadrantChart', value: 'quadrantChart', name: 'Quadrant Chart' },
+            { key: 'zenuml', value: 'zenuml', name: 'ZenUML Sequence' },
+            { key: 'sankey-beta', value: 'sankey-beta', name: 'Sankey Diagram (Beta)' }
+        ];
+
+        function detectDiagramType(text) {
+            // Remove YAML frontmatter if present
+            let cleanText = text.replace(/^---[\s\S]*?---\s*/m, '').trim();
+            const firstLine = cleanText.split('\n')[0].trim();
+            for (const t of typeMap) {
+                if (firstLine.startsWith(t.key)) {
+                    return t.value;
+                }
+            }
+            return 'graph TD'; // default fallback
+        }
+
+        function updateTypeIndicator(text) {
+            // Remove YAML frontmatter if present
+            let cleanText = text.replace(/^---[\s\S]*?---\s*/m, '').trim();
+            const firstLine = cleanText.split('\n')[0].trim();
+            let typeName = 'Auto-detected (Flowchart)'; // default when not detected
+            let isDetected = false;
+            
+            for (const t of typeMap) {
+                if (firstLine.startsWith(t.key)) {
+                    typeName = t.name;
+                    isDetected = true;
+                    break;
+                }
+            }
+            
+            // Add visual indicator for auto-detected vs explicitly detected
+            const badgeClass = isDetected ? 'type-badge' : 'type-badge auto-detected';
+            typeIndicator.innerHTML = `<span class="${badgeClass}">${typeName}</span>`;
+        }
+
+        inputArea.addEventListener('paste', (e) => {
+            setTimeout(() => {
+                updateTypeIndicator(inputArea.value);
+                debouncedRender(); // Use improved debounced rendering
+            }, 0);
+        });
+
+        inputArea.addEventListener('input', (e) => {
+            updateTypeIndicator(inputArea.value);
+            debouncedRender(); // Use improved debounced rendering
+        });
+
+        // Initialize with saved theme
+        const savedTheme = localStorage.getItem('mermaid-theme') || 'default';
+        document.getElementById('themeSelect').value = savedTheme;
+        initializeMermaidWithTheme(savedTheme);
+        
+        // Ensure we have safe default content
+        const inputElement = document.getElementById('input');
+        if (!inputElement.value || inputElement.value.includes('block-beta')) {
+            // Reset to safe pie chart if content is empty or contains problematic block diagram
+            inputElement.value = `pie title Pets adopted by volunteers
+    "Dogs" : 386
+    "Cats" : 85
+    "Rats" : 15`;
+        }
+        
+        updateTypeIndicator(inputElement.value);
+        renderDiagram();
+        
+        // ============================================================================
+        // Quick Examples Feature
+        // ============================================================================
+        
+        const examples = {
+            flowchart: `flowchart TD
+    A[Start] --> B{Decision}
+    B -->|Yes| C[Process 1]
+    B -->|No| D[Process 2]
+    C --> E[End]
+    D --> E`,
+            
+            sequence: `sequenceDiagram
+    participant A as User
+    participant B as System
+    participant C as Database
+    
+    A->>B: Login Request
+    B->>C: Validate User
+    C-->>B: User Valid
+    B-->>A: Login Success`,
+            
+            pie: `pie title Favorite Programming Languages
+    "JavaScript" : 35
+    "Python" : 30
+    "Java" : 20
+    "C++" : 10
+    "Other" : 5`,
+            
+            gantt: `gantt
+    title Project Timeline
+    dateFormat  YYYY-MM-DD
+    section Planning
+    Define requirements: 2024-01-01, 5d
+    Create design: 2024-01-06, 3d
+    section Development
+    Backend development: 2024-01-09, 10d
+    Frontend development: 2024-01-12, 8d
+    section Testing
+    Unit testing: 2024-01-20, 3d
+    Integration testing: 2024-01-23, 2d`,
+            
+            class: `classDiagram
+    class Animal {
+        +String name
+        +int age
+        +makeSound()
+    }
+    class Dog {
+        +String breed
+        +bark()
+    }
+    class Cat {
+        +boolean indoor
+        +meow()
+    }
+    Animal <|-- Dog
+    Animal <|-- Cat`,
+            
+            state: `stateDiagram-v2
+    [*] --> Idle
+    Idle --> Processing : start
+    Processing --> Success : complete
+    Processing --> Error : fail
+    Success --> [*]
+    Error --> Idle : retry
+    Error --> [*] : abort`,
+            
+            er: `erDiagram
+    CUSTOMER {
+        int customer_id PK
+        string name
+        string email
+    }
+    ORDER {
+        int order_id PK
+        int customer_id FK
+        date order_date
+        decimal total
+    }
+    PRODUCT {
+        int product_id PK
+        string name
+        decimal price
+    }
+    CUSTOMER ||--o{ ORDER : places
+    ORDER }o--|| PRODUCT : contains`
+        };
+        
+        document.getElementById('exampleSelect').addEventListener('change', (e) => {
+            const selectedExample = e.target.value;
+            if (selectedExample && examples[selectedExample]) {
+                const inputArea = document.getElementById('input');
+                inputArea.value = examples[selectedExample];
+                updateTypeIndicator(inputArea.value);
+                renderDiagram();
+                e.target.value = ''; // Reset select
+                Utils.showSuccessToast(`📝 Loaded ${selectedExample} example!`);
+            }
+        });
+
+        // Set default padding to 2
+        document.getElementById('exportPadding').value = 2;
+        
+        // ============================================================================
+        // Performance and Validation Improvements
+        // ============================================================================
+        
+        // Improved input validation with real-time feedback
+        function validateDiagramInput(input) {
+            const issues = [];
+            
+            // Check for common syntax issues
+            if (!input.trim()) {
+                return ['⚠️ Please enter diagram code'];
+            }
+            
+            // Check for unclosed brackets/quotes
+            const openBrackets = (input.match(/\[/g) || []).length;
+            const closeBrackets = (input.match(/\]/g) || []).length;
+            if (openBrackets !== closeBrackets) {
+                issues.push('💡 Unmatched square brackets [ ]');
+            }
+            
+            const openParens = (input.match(/\(/g) || []).length;
+            const closeParens = (input.match(/\)/g) || []).length;
+            if (openParens !== closeParens) {
+                issues.push('💡 Unmatched parentheses ( )');
+            }
+            
+            // Check for minimum content
+            const lines = input.trim().split('\n').filter(line => 
+                line.trim() && !line.trim().startsWith('%%')
+            );
+            if (lines.length < 2) {
+                issues.push('💡 Diagram needs more content (at least 2 lines)');
+            }
+            
+            return issues;
+        }
+        
+        // Debounced rendering with validation
+        let renderTimeout = null;
+        const RENDER_DELAY = 500;
+        
+        function debouncedRender() {
+            clearTimeout(renderTimeout);
+            renderTimeout = setTimeout(() => {
+                const input = document.getElementById('input').value;
+                const validationIssues = validateDiagramInput(input);
+                
+                if (validationIssues.length > 0) {
+                    // Show validation warnings but still attempt render
+                    console.warn('Validation issues:', validationIssues);
+                }
+                
+                renderDiagram();
+            }, RENDER_DELAY);
+        }
+        
+        // Enhanced error reporting
+        function getDetailedErrorMessage(error, input) {
+            const errorMsg = error.message || error.str || JSON.stringify(error);
+            
+            // ZenUML not supported warning
+            if (input.trim().startsWith('zenuml') || errorMsg.includes('zenuml')) {
+                return `
+                    <strong>⚠️ ZenUML Not Supported</strong><br>
+                    ZenUML diagrams are not supported in the current Mermaid version.<br><br>
+                    <strong>Alternative:</strong> Use standard sequence diagrams instead:<br>
+                    <code>sequenceDiagram<br>    participant Alice<br>    participant John<br>    Alice->>John: Hello John, how are you?<br>    John->>Alice: Great!</code>
+                `;
+            }
+            
+            // XY Chart syntax error help
+            if (input.trim().startsWith('xychart-beta') && errorMsg.includes('Parse error')) {
+                return `
+                    <strong>📊 XY Chart Syntax Issue</strong><br>
+                    There's a syntax error in your XY Chart. Common issues:<br><br>
+                    <strong>✅ Correct format:</strong><br>
+                    <pre><code>xychart-beta
+    title "Sales Revenue"
+    x-axis [jan, feb, mar, apr, may]
+    y-axis "Revenue" 1000 --> 5000
+    bar [1000, 2000, 3000, 4000, 5000]</code></pre>
+                    <strong>Common mistakes:</strong><br>
+                    • Missing quotes around titles<br>
+                    • Wrong arrow syntax (use <code>--></code>)<br>
+                    • Mismatched brackets [ ]
+                `;
+            }
+            
+            // Enhanced Font Awesome error detection
+            if (input.includes('fa:fa-') || input.includes('[fa:')) {
+                return `
+                    <strong>🎨 Font Awesome Icon Issue</strong><br>
+                    The syntax <code>fa:fa-*</code> is for icon libraries, not direct HTML.<br><br>
+                    <strong>Solutions:</strong><br>
+                    • Use emoji: <code>B[🐦 Twitter]</code><br>
+                    • Use HTML: <code>B["&lt;i class='fab fa-twitter'&gt;&lt;/i&gt; Twitter"]</code><br>
+                    • Use plain text: <code>B[Twitter Icon]</code>
+                `;
+            }
+            
+            // Enhanced C4 diagram support
+            if (input.includes('C4') && errorMsg.includes('Parse error')) {
+                return `
+                    <strong>🏗️ C4 Diagram Format</strong><br>
+                    Make sure your C4 diagram follows the correct syntax:<br>
+                    <code>C4Context<br>title System Context<br>Person(user, "User")<br>System(system, "System")</code>
+                `;
+            }
+            
+            // Enhanced general error handling
+            if (errorMsg.includes('Parse error') || errorMsg.includes('Expecting')) {
+                const suggestions = [];
+                
+                if (!input.includes('-->') && !input.includes('->')) {
+                    suggestions.push('Add connections with <code>--></code> or <code>-></code>');
+                }
+                
+                if (input.split('\n').length <= 2) {
+                    suggestions.push('Add more content (at least 3-4 lines)');
+                }
+                
+                return `
+                    <strong>🔧 Syntax Error</strong><br>
+                    ${errorMsg}<br><br>
+                    <strong>Quick fixes:</strong><br>
+                    ${suggestions.length > 0 ? '• ' + suggestions.join('<br>• ') : 'Check diagram syntax and format'}
+                `;
+            }
+            
+            return `<strong>⚠️ Error:</strong> ${errorMsg}`;
+        }
+        }
+
+        // If libraries are already loaded (sync case), initialize immediately
+        if (typeof mermaid !== 'undefined' && typeof jsPDF !== 'undefined' && typeof html2canvas !== 'undefined') {
+            initializeApp();
+        }
+    </script>
+</body>
+</html>
