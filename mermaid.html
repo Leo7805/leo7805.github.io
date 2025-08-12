@@ -1125,9 +1125,45 @@
                     const bbox = svgElement.getBBox();
                     const computedStyle = window.getComputedStyle(svgElement);
                     
+                    // Check if this is a Gantt chart (which often has excessive right-side whitespace)
+                    const isGantt = !!(svgElement.querySelector('[class*="section"]') || 
+                                      svgElement.querySelector('[class*="task"]') ||
+                                      svgElement.textContent.includes('gantt'));
+                    
+                    let adjustedBBox = bbox;
+                    
+                    if (isGantt) {
+                        // For Gantt charts, find the actual rightmost content to trim whitespace
+                        const contentElements = svgElement.querySelectorAll('rect, text, path, line, circle');
+                        let maxContentX = 0;
+                        
+                        contentElements.forEach(el => {
+                            try {
+                                const elBBox = el.getBBox();
+                                const rightEdge = elBBox.x + elBBox.width;
+                                if (rightEdge > maxContentX && elBBox.width > 0) {
+                                    maxContentX = rightEdge;
+                                }
+                            } catch (e) {
+                                // Skip elements that don't have getBBox
+                            }
+                        });
+                        
+                        // If we found actual content, trim to that + small margin
+                        if (maxContentX > 0) {
+                            const trimmedWidth = Math.min(bbox.width, maxContentX - bbox.x + 20); // 20px margin
+                            adjustedBBox = {
+                                x: bbox.x,
+                                y: bbox.y,
+                                width: trimmedWidth,
+                                height: bbox.height
+                            };
+                        }
+                    }
+                    
                     // Calculate proper dimensions with padding
-                    let width = bbox.width;
-                    let height = bbox.height;
+                    let width = adjustedBBox.width;
+                    let height = adjustedBBox.height;
                     
                     // If bbox is empty, try to get computed dimensions
                     if (width === 0 || height === 0) {
@@ -1142,7 +1178,7 @@
                     // Set proper SVG attributes with padding
                     svgClone.setAttribute('width', totalWidth);
                     svgClone.setAttribute('height', totalHeight);
-                    svgClone.setAttribute('viewBox', `${bbox.x - padding} ${bbox.y - padding} ${totalWidth} ${totalHeight}`);
+                    svgClone.setAttribute('viewBox', `${adjustedBBox.x - padding} ${adjustedBBox.y - padding} ${totalWidth} ${totalHeight}`);
                     
                     // Ensure proper namespace
                     svgClone.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
@@ -1189,8 +1225,45 @@
                     const padding = parseInt(document.getElementById('exportPadding').value) || 0;
                     const bbox = svgElement.getBBox();
                     const computedStyle = window.getComputedStyle(svgElement);
-                    let width = bbox.width;
-                    let height = bbox.height;
+                    
+                    // Check if this is a Gantt chart (which often has excessive right-side whitespace)
+                    const isGantt = !!(svgElement.querySelector('[class*="section"]') || 
+                                      svgElement.querySelector('[class*="task"]') ||
+                                      svgElement.textContent.includes('gantt'));
+                    
+                    let adjustedBBox = bbox;
+                    
+                    if (isGantt) {
+                        // For Gantt charts, find the actual rightmost content to trim whitespace
+                        const contentElements = svgElement.querySelectorAll('rect, text, path, line, circle');
+                        let maxContentX = 0;
+                        
+                        contentElements.forEach(el => {
+                            try {
+                                const elBBox = el.getBBox();
+                                const rightEdge = elBBox.x + elBBox.width;
+                                if (rightEdge > maxContentX && elBBox.width > 0) {
+                                    maxContentX = rightEdge;
+                                }
+                            } catch (e) {
+                                // Skip elements that don't have getBBox
+                            }
+                        });
+                        
+                        // If we found actual content, trim to that + small margin
+                        if (maxContentX > 0) {
+                            const trimmedWidth = Math.min(bbox.width, maxContentX - bbox.x + 20); // 20px margin
+                            adjustedBBox = {
+                                x: bbox.x,
+                                y: bbox.y,
+                                width: trimmedWidth,
+                                height: bbox.height
+                            };
+                        }
+                    }
+                    
+                    let width = adjustedBBox.width;
+                    let height = adjustedBBox.height;
                     if (width === 0 || height === 0) {
                         width = parseFloat(computedStyle.width) || 800;
                         height = parseFloat(computedStyle.height) || 600;
@@ -1199,7 +1272,7 @@
                     const totalHeight = height + (padding * 2);
                     svgClone.setAttribute('width', totalWidth);
                     svgClone.setAttribute('height', totalHeight);
-                    svgClone.setAttribute('viewBox', `${bbox.x - padding} ${bbox.y - padding} ${totalWidth} ${totalHeight}`);
+                    svgClone.setAttribute('viewBox', `${adjustedBBox.x - padding} ${adjustedBBox.y - padding} ${totalWidth} ${totalHeight}`);
                     svgClone.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
                     svgClone.setAttribute('xmlns:xlink', 'http://www.w3.org/1999/xlink');
 
