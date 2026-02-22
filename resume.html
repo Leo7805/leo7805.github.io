@@ -1,19 +1,8 @@
 <!doctype html>
 <html>
 <head>
-	<!-- Google tag (gtag.js) -->
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-C6E5E3W0S1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-C6E5E3W0S1');
-</script> -->
-
-<script data-goatcounter="https://leo7805.goatcounter.com/count"
+  <script data-goatcounter="https://leo7805.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
-	
 <meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'><style type='text/css'>html {overflow-x: initial !important;}</style>
 <style type='text/css'  id="style-base">:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
 .mac-os-11 { --title-bar-height: 28px; }
@@ -237,600 +226,88 @@ mjx-container { break-inside: avoid; }
 .md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
 
 </style>
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic&amp;subset=latin,cyrillic-ext,cyrillic,latin-ext' type='text/css' />
-<style type='text/css'  id="style-theme_css">/* meyer reset -- http://meyerweb.com/eric/tools/css/reset/ , v2.0 | 20110126 | License: none (public domain) */
-
-@include-when-export url(https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic,latin-ext);
-
-/* =========== */
-
-/* pt-serif-regular - latin */
-/* pt-serif-italic - latin */
-/* pt-serif-700 - latin */
-/* pt-serif-700italic - latin */
-:root {
-	--active-file-bg-color: #dadada;
-	--active-file-bg-color: rgba(32, 43, 51, 0.63);
-	--active-file-text-color: white;
-	--bg-color: #f3f2ee;
-	--text-color: #1f0909;
-	--control-text-color: #444;
-	--rawblock-edit-panel-bd: #e5e5e5;
-
-	--select-text-bg-color: rgba(32, 43, 51, 0.63);
-  --select-text-font-color: white;
-}
-
-pre {
-	--select-text-bg-color: #36284e;
-	--select-text-font-color: #fff;
-}
-
-html {
-	font-size: 16px;
-	-webkit-font-smoothing: antialiased;
-}
-
+<style type='text/css'  id="style-theme_css">/* ====== Global ====== */
 html, body {
-	background-color: #f3f2ee;
-	font-family: "PT Serif", 'Times New Roman', 'SF Pro', Times, serif;
-	color: #1f0909;
-	line-height: 1.5em;
+  font-size: 12px;          /* 简历常用 11–12px */
+  line-height: 1.25;        /* 更紧凑的行距 */
+  max-width: 900px;         /* 控制页面宽度 */
+  margin: 0 auto;
+  color: #222;
+  font-family: "Georgia", "Times New Roman", serif; /* Newsprint 字体 */
 }
 
-/*#write {
-	overflow-x: auto;
-    max-width: initial;
-	padding-left: calc(50% - 17em);
-    padding-right: calc(50% - 17em);
+/* ====== Headings ====== */
+h1, h2, h3, h4 {
+  font-weight: 600;
+  margin-top: 0.6em;
+  margin-bottom: 0.2em;
+  font-family: "Georgia", "Times New Roman", serif; /* 保持一致 */
 }
 
-@media (max-width: 36em) {
- 	#write {
- 		padding-left: 1em;
-    	padding-right: 1em;
- 	}
-}*/
-
-#write {
-	max-width: 40em;
-}
-
-@media only screen and (min-width: 1400px) {
-	#write {
-			max-width: 914px;
-	}
-}
-
-ol li {
-	list-style-type: decimal;
-	list-style-position: outside;
-}
-ul li {
-	list-style-type: disc;
-	list-style-position: outside;
-}
-
-ol,
-ul {
-	list-style: none;
-}
-
-blockquote,
-q {
-	quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-/* styles */
-
-/* ====== */
-
-/* headings */
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-weight: bold;
-}
 h1 {
-	font-size: 1.875em;
-	/*30 / 16*/
-	line-height: 1.6em;
-	/* 48 / 30*/
-	margin-top: 2em;
+  font-size: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 4px;
 }
-h2,
+
+h2 {
+  font-size: 15px;
+  margin-top: 1em;
+}
+
 h3 {
-	font-size: 1.3125em;
-	/*21 / 16*/
-	line-height: 1.15;
-	/*24 / 21*/
-	margin-top: 2.285714em;
-	/*48 / 21*/
-	margin-bottom: 1.15em;
-	/*24 / 21*/
-}
-h3 {
-	font-weight: normal;
-}
-h4 {
-	font-size: 1.125em;
-	/*18 / 16*/
-	margin-top: 2.67em;
-	/*48 / 18*/
-}
-h5,
-h6 {
-	font-size: 1em;
-	/*16*/
-}
-h1 {
-	border-bottom: 1px solid;
-	margin-bottom: 1.875em;
-	padding-bottom: 0.8125em;
-}
-/* links */
-
-a {
-	text-decoration: none;
-	color: #065588;
-}
-a:hover,
-a:active {
-	text-decoration: underline;
-}
-/* block spacing */
-
-p,
-blockquote,
-.md-fences {
-	margin-bottom: 1.5em;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin-bottom: 1.5em;
-}
-/* blockquote */
-
-blockquote {
-	font-style: italic;
-	border-left: 5px solid;
-	margin-left: 2em;
-	padding-left: 1em;
-}
-/* lists */
-
-ul,
-ol {
-	margin: 0 0 1.5em 1.5em;
-}
-/* tables */
-.md-meta,.md-before, .md-after {
-	color:#999;
+  font-size: 13px;
 }
 
+/* ====== Paragraphs ====== */
+p {
+  margin: 0.15em 0;
+}
+
+/* ====== Lists ====== */
+ul, ol {
+  margin: 0.2em 0 0.2em 1.2em;
+}
+
+li {
+  margin: 0.1em 0;
+}
+
+/* ====== Horizontal line ====== */
+hr {
+  margin: 0.8em 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+/* ====== Tables ====== */
 table {
-	margin-bottom: 1.5em;
-	/*24 / 16*/
-	font-size: 1em;
-	/* width: 100%; */
-}
-thead th,
-tfoot th {
-	padding: .25em .25em .25em .4em;
-	text-transform: uppercase;
-}
-th {
-	text-align: left;
-}
-td {
-	vertical-align: top;
-	padding: .25em .25em .25em .4em;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.4em 0;
 }
 
-code,
-.md-fences {
-	background-color: #dadada;
+th, td {
+  border: 1px solid #ccc;
+  padding: 4px 6px;
+  font-size: 11px;
+  font-family: "Georgia", "Times New Roman", serif;
 }
 
+/* ====== Code ====== */
 code {
-	padding-left: 2px;
-	padding-right: 2px;
+  font-size: 11px;
+  background: #f2f2f2;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-family: "Courier New", monospace; /* 保留 code 字体 */
 }
 
-.md-fences {
-	margin-left: 2em;
-	margin-bottom: 3em;
-	padding-left: 1ch;
-	padding-right: 1ch;
+/* ====== Page settings for PDF ====== */
+@page {
+  margin: 1.5cm;
 }
 
-pre,
-code,
-tt {
-	font-size: .875em;
-	line-height: 1.714285em;
-}
-/* some fixes */
-
-h1 {
-	line-height: 1.3em;
-	font-weight: normal;
-	margin-bottom: 0.5em;
-}
-
-p + ul,
-p + ol{
-	margin-top: .5em;
-}
-
-h3 + ul,
-h4 + ul,
-h5 + ul,
-h6 + ul,
-h3 + ol,
-h4 + ol,
-h5 + ol,
-h6 + ol {
-	margin-top: .5em;
-}
-
-li > ul,
-li > ol {
-	margin-top: inherit;
-	margin-bottom: 0;
-}
-
-li ol>li {
-	list-style-type: lower-alpha;
-}
-
-li li ol>li{
-	list-style-type: lower-roman;
-}
-
-h2,
-h3 {
-	margin-bottom: .75em;
-}
-hr {
-	border-top: none;
-	border-right: none;
-	border-bottom: 1px solid;
-	border-left: none;
-}
-h1 {
-	border-color: #c5c5c5;
-}
-blockquote {
-	border-color: #bababa;
-	color: #656565;
-}
-
-blockquote ul,
-blockquote ol {
-	margin-left:0;
-}
-
-.ty-table-edit {
-	background-color: transparent;
-}
-thead {
-	background-color: #dadada;
-}
-tr:nth-child(even) {
-	background: #e8e7e7;
-}
-hr {
-	border-color: #c5c5c5;
-}
-.task-list{
-	padding-left: 1rem;
-}
-
-.md-task-list-item {
-	padding-left: 1.5rem;
-	list-style-type: none;
-}
-
-.md-task-list-item > input:before {
-	content: '\221A';
-	display: inline-block;
-	width: 1.25rem;
-  	height: 1.6rem;
-	vertical-align: middle;
-	text-align: center;
-	color: #ddd;
-	background-color: #F3F2EE;
-}
-
-.md-task-list-item > input:checked:before,
-.md-task-list-item > input[checked]:before{
-	color: inherit;
-}
-
-#write pre.md-meta-block {
-	min-height: 1.875rem;
-	color: #555;
-	border: 0px;
-	background: transparent;
-	margin-top: -4px;
-	margin-left: 1em;
-	margin-top: 1em;
-}
-
-.md-image>.md-meta {
-	color: #9B5146;
-}
-
-.md-image>.md-meta{
-	font-family: Menlo, 'Ubuntu Mono', Consolas, 'Courier New', 'Microsoft Yahei', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', serif;
-}
-
-
-#write>h3.md-focus:before{
-	left: -1.5rem;
-	color:#999;
-	border-color:#999;
-}
-#write>h4.md-focus:before{
-	left: -1.5rem;
-	top: .25rem;
-	color:#999;
-	border-color:#999;
-}
-#write>h5.md-focus:before{
-	left: -1.5rem;
-	top: .0.3125rem;
-	color:#999;
-	border-color:#999;
-}
-#write>h6.md-focus:before{
-	left: -1.5rem;
-	top: 0.3125rem;
-	color:#999;
-	border-color:#999;
-}
-
-.md-toc:focus .md-toc-content{
-	margin-top: 19px;
-}
-
-.md-toc-content:empty:before{
-	color: #065588;
-}
-.md-toc-item {
-	color: #065588;
-}
-#write div.md-toc-tooltip {
-	background-color: #f3f2ee;
-}
-
-#typora-sidebar {
-	background-color: #f3f2ee;
-	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.375);
-  	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.375);
-}
-
-.pin-outline #typora-sidebar {
-	background: inherit;
-	box-shadow: none;
-	border-right: 1px dashed;
-}
-
-.pin-outline #typora-sidebar:hover .outline-title-wrapper {
-	border-left:1px dashed;
-}
-
-.outline-item:hover {
-  background-color: #dadada;
-  border-left: 28px solid #dadada;
-  border-right: 18px solid #dadada;
-}
-
-.typora-node .outline-item:hover {
-  	border-right: 28px solid #dadada;
-}
-
-.outline-expander:before {
-  content: "\f0da";
-  font-family: FontAwesome;
-  font-size:14px;
-  top: 1px;
-}
-
-.outline-expander:hover:before,
-.outline-item-open>.outline-item>.outline-expander:before {
-  content: "\f0d7";
-}
-
-.modal-content {
-	background-color: #f3f2ee;
-}
-
-.auto-suggest-container ul li {
-	list-style-type: none;
-}
-
-/** UI for electron */
-
-.megamenu-menu,
-#top-titlebar, #top-titlebar *,
-.megamenu-content {
-	background: #f3f2ee;
-	color: #1f0909;
-}
-
-.megamenu-menu-header {
-	border-bottom: 1px dashed #202B33;
-}
-
-.megamenu-menu {
-	box-shadow: none;
-	border-right: 1px dashed;
-}
-
-header, .context-menu, .megamenu-content, footer {
-	font-family: "PT Serif", 'Times New Roman', Times, serif;
-    color: #1f0909;
-}
-
-#megamenu-back-btn {
-	color: #1f0909;
-	border-color: #1f0909;
-}
-
-.megamenu-menu-header #megamenu-menu-header-title:before {
-	color: #1f0909;
-}
-
-.megamenu-menu-list li a:hover, .megamenu-menu-list li a.active {
-	color: inherit;
-	background-color: #e8e7df;
-}
-
-.long-btn:hover {
-	background-color: #e8e7df;
-}
-
-#recent-file-panel tbody tr:nth-child(2n-1) {
-    background-color: transparent !important;
-}
-
-.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
-    color: inherit;
-}
-
-.megamenu-menu-panel .btn {
-	background-color: #D2D1D1;
-}
-
-.btn-default {
-	background-color: transparent;
-}
-
-.typora-sourceview-on #toggle-sourceview-btn,
-.ty-show-word-count #footer-word-count {
-	background: #c7c5c5;
-}
-
-#typora-quick-open {
-    background-color: inherit;
-}
-
-.md-diagram-panel {
-	margin-top: 8px;
-}
-
-.file-list-item-file-name {
-	font-weight: initial;
-}
-
-.file-list-item-summary {
-	opacity: 1;
-}
-
-.file-list-item {
-	color: #777;
-}
-
-.file-list-item.active {
-	background-color: inherit;
-	color: black;
-}
-
-.ty-side-sort-btn.active {
-	background-color: inherit;
-}
-
-.file-list-item.active .file-list-item-file-name  {
-	font-weight: bold;
-}
-
-.file-list-item{
-    opacity:1 !important;
-}
-
-.file-library-node.active>.file-node-background{
-	background-color: rgba(32, 43, 51, 0.63);
-	background-color: var(--active-file-bg-color);
-}
-
-.file-tree-node.active>.file-node-content{
-	color: white;
-	color: var(--active-file-text-color);
-}
-
-.md-task-list-item>input {
-	margin-left: -1.7em;
-	margin-top: calc(1rem - 12px);
-	-webkit-appearance: button;
-}
-
-input {
-	border: 1px solid #aaa;
-}
-
-.megamenu-menu-header #megamenu-menu-header-title,
-.megamenu-menu-header:hover, 
-.megamenu-menu-header:focus {
-	color: inherit;
-}
-
-.dropdown-menu .divider {
-	border-color: #e5e5e5;
-	opacity: 1;
-}
-
-/* https://github.com/typora/typora-issues/issues/2046 */
-.os-windows-7 strong,
-.os-windows-7 strong  {
-	font-weight: 760;
-}
-
-.ty-preferences .btn-default {
-	background: transparent;
-}
-
-.ty-preferences .window-header {
-	border-bottom: 1px dashed #202B33;
-	box-shadow: none;
-}
-
-#sidebar-loading-template, #sidebar-loading-template.file-list-item {
-	color: #777;
-}
-
-.searchpanel-search-option-btn.active {
-	background: #777;
-	color: white;
-}
-
-.export-detail, .light .export-detail, 
-.light .export-item.active, 
-.light .export-items-list-control {
-	background: #e0e0e0;
-	border-radius: 2px;
-	font-weight: 700;
-	color: inherit
-}
 
 /* ===== 简历紧凑版补丁：字体、行距、间距优化 ===== */
 
@@ -898,22 +375,17 @@ code {
   padding: 2px 4px !important;
 }
 
-h2 {
-	color: #3b8eea !important;
-}
-
 /* PDF 页边距缩小 */
 @page {
   margin: 1.5cm !important;
 }
-
 </style>
 <style type='text/css'  id="style-lp">ol, ul {padding-left: 40px}</style>
 <style type='text/css'  id="style-mac-print"> @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}</style>
 
-<title>Leo_Junior_Backend_Developer_Resume</title>
+<title>Resume-SME</title>
 </head>
 <body class='typora-export'><div class='typora-export-content'>
-<div id='write'  class=''><h1 id='jin-liu-leo-|-junior-software-developer-full-stack--backend-systems'><span>Jin Liu (Leo) | Junior Software Developer (Full Stack / Backend Systems)</span></h1><p><strong><span>Phone:</span></strong><span> 0475 266 279</span></p><p><strong><span>Email:</span></strong><span> </span><a href='mailto:geneleoc@gmail.com' target='_blank' class='url'>geneleoc@gmail.com</a></p><p><strong><span>LinkedIn:</span></strong><span> </span><a href='https://www.linkedin.com/in/jin-liu-56525a32a/' target='_blank' class='url'>https://www.linkedin.com/in/jin-liu-56525a32a/</a></p><p><strong><span>GitHub:</span></strong><span> </span><a href='https://github.com/Leo7805' target='_blank' class='url'>https://github.com/Leo7805</a></p><p><strong><span>Work Rights:</span></strong><span> Australian Permanent Resident</span></p><p>&nbsp;</p><hr /><h2 id='summary'><span>Summary</span></h2><p><span>Graduate Software Developer with a backend focus on Node.js and RESTful API development, currently completing a Master of IT at UNSW. Experienced in building full-stack, data-driven web applications with role-based access control, relational database modelling (PostgreSQL/Prisma), and secure JWT authentication. Developed an inventory management platform with modular service architecture to support scalable business workflows and data integration. Interested in building production-ready systems that integrate intelligent or data-driven features into user-facing applications.</span></p><hr /><h2 id='technical-skills'><span>Technical Skills</span></h2><p><strong><span>Languages:</span></strong><span> TypeScript, JavaScript, Python</span><br/><strong><span>Backend:</span></strong><span> Node.js, Express, RESTful APIs</span><br/><strong><span>Frontend:</span></strong><span> React (basic functional components, API integration)</span><br/><strong><span>Databases:</span></strong><span> PostgreSQL, Prisma ORM, SQL fundamentals</span><br/><strong><span>Cloud &amp; Integration:</span></strong><span> API-driven workflows, JWT authentication, RBAC</span><br/><strong><span>Tools:</span></strong><span> Git, Postman, Linux, Shell scripting</span><br/><strong><span>Concepts:</span></strong><span> Object-Oriented Programming, SDLC, Modular Architecture, Service-Oriented Design</span></p><hr /><h2 id='projects'><span>Projects</span></h2><h3 id='ims----full-stack-order--inventory-management-platform'><span>IMS – Full-Stack Order &amp; Inventory Management Platform  </span></h3><p><span>Full-Stack Personal Project</span><br/><span>GitHub: github.com/Leo7805/IMS</span></p><ul><li><p><span>Designed and implemented RESTful APIs to support inventory and order workflows with role-based access control (RBAC).  </span></p></li><li><p><span>Structured relational data models using Prisma ORM and PostgreSQL to support scalable business logic and reporting.  </span></p></li><li><p><span>Implemented JWT-based authentication and secure access control across multiple user roles.  </span></p></li><li><p><span>Built modular backend services using layered architecture (controller/service separation) to support maintainability and feature scalability.  </span></p></li><li><p><span>Developed backend components to enable integration of data-driven features into frontend applications.  </span></p></li><li><p><span>Added pagination and filtering mechanisms to support efficient operational data querying.  </span></p></li><li><p><span>Integrated validation and centralised error handling to improve system reliability.  </span></p></li><li><p><span>Documented API endpoints and technical workflows to support future system integration.</span></p></li></ul><hr /><h2 id='additional-technical-experience'><span>Additional Technical Experience</span></h2><ul><li><p><span>Completed 500+ Linux and Shell scripting assignments, developing automation scripts for system operations and workflow tasks.  </span></p></li><li><p><span>Built Python applications (3,000+ lines), strengthening debugging, data processing, and modular design skills.  </span></p></li><li><p><span>Familiar with API testing tools such as Postman for validating REST-based services.</span></p></li></ul><hr /><h2 id='education'><span>Education</span></h2><p><strong><span>Master of Information Technology</span></strong><span></span><br/><span>University of New South Wales (UNSW)</span><br/><span>Expected Completion: 2026</span><br/><span>Academic Result: Distinction average (WAM 81/100)</span></p></div></div>
+<div id='write'  class=''><h1 id='jin-liu-leo-|-junior-backend-software-developer'><span>Jin Liu (Leo) | Junior Backend Software Developer</span></h1><p><span>📞 0475 266 279</span><br/><span>📧 </span><a href='mailto:geneleoc@gmail.com' target='_blank' class='url'>geneleoc@gmail.com</a><span></span><br/><span>🔗 LinkedIn: </span><a href='https://linkedin.com/in/jin-liu-56525a32a' target='_blank' class='url'>https://linkedin.com/in/jin-liu-56525a32a</a><span></span><br/><span>👨🏻‍💼 Work Rights: Australian Permanent Resident  </span></p><hr /><h2 id='summary'><span>Summary</span></h2><p><span>Junior Software Engineer currently completing a Master of IT at UNSW, with hands-on experience delivering and deploying backend systems to support real-world business workflows such as order processing and inventory tracking. Demonstrated ability to design secure RESTful APIs with role-based access and documented integration points using OpenAPI to facilitate onboarding and collaboration with frontend or QA stakeholders. Seeking to contribute to a collaborative engineering environment while continuing to grow in full SDLC delivery.</span></p><hr /><h2 id='technical-skills'><span>Technical Skills</span></h2><p><strong><span>Prgramming Languages:</span></strong><span> TypeScript, JavaScript, Python</span><br/><strong><span>Backend:</span></strong><span> Node.js, Express, RESTful APIs</span><br/><strong><span>Frontend:</span></strong><span> React (basic functional components, API integration)</span><br/><strong><span>Databases:</span></strong><span> PostgreSQL, Prisma ORM</span><br/><strong><span>Authentication:</span></strong><span> JWT, Role-Based Access Control (RBAC)</span><br/><strong><span>Tools:</span></strong><span> Git, Postman, Linux, Shell scripting</span><br/><strong><span>Concepts:</span></strong><span> Object-Oriented Programming, SDLC, Modular Design, REST Architecture    </span></p><p><strong><span>Languages</span></strong><span>: English, Chinese (Mandarin)</span></p><hr /><h2 id='projects'><span>Projects</span></h2><h3 id='ims----order--inventory-management-platform'><span>IMS – Order &amp; Inventory Management Platform  </span></h3><p><span>GitHub: </span><a href='https://github.com/Leo7805/IMS' target='_blank' class='url'>https://github.com/Leo7805/IMS</a><span></span><br/><span>API Demo (Swagger): </span><a href='https://ims-fpq2.onrender.com/docs' target='_blank' class='url'>https://ims-fpq2.onrender.com/docs</a></p><ul><li><p><span>Built and deployed a backend platform to simulate real-world order processing and inventory tracking workflows for SME-style operations.</span></p></li><li><p><span>Implemented role-based access to separate responsibilities between administrative and operational users.</span></p></li><li><p><span>Designed RESTful APIs to support business tasks such as order creation, status tracking, and stock updates.</span></p></li><li><p><span>Delivered authenticated endpoints and structured error-handling strategies to ensure secure and reliable system usage.</span></p></li><li><p><span>Integrated OpenAPI (Swagger) documentation to facilitate onboarding and collaboration with frontend or QA stakeholders.</span></p></li><li><p><span>Structured the system using modular service layers to improve maintainability in a collaborative development environment.</span></p></li></ul><hr /><h2 id='additional-technical-experience'><span>Additional Technical Experience</span></h2><ul><li><p><span>Developed Python-based applications (3,000+ lines), strengthening debugging and modular code design skills.</span></p></li><li><p><span>Familiar with backend system workflows including data validation, CRUD operations, and role-based access logic.</span></p></li></ul><hr /><h2 id='education'><span>Education</span></h2><p><strong><span>Master of Information Technology</span></strong><span></span><br/><span>University of New South Wales (UNSW)</span><br/><span>Expected Completion: 2026</span><br/><span>WAM: 81  </span></p></div></div>
 </body>
 </html>
